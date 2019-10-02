@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito&display=swap');
+:root{
+    --orange:#FF6C2F;
+    --black:#000000;
+    --grey:#96A9A7;
+    --cyan:#00B8E6;
+    --white:#ffffff;
+}
+body{
+    font-family: 'Nunito'
+}
+.bg-orange{
+    background-color: var(--orange)
+}
+.bg-black{
+    background-color: var(--black)
+}
+.bg-grey{
+    background-color: var(--grey)
+}
+.bg-cyan{
+    background-color: var(--cyan)
+}
+.bg-white{
+    background-color: white;
+}
+.orange{
+    color:var(--orange)
+}
+.black{
+    color:var(--black)
+}
+.grey{
+    color:var(--grey)
+}
+.cyan{
+    color:var(--cyan)
+}
+.white{
+    color:white
+}
+.navbar-collapse a{
+    text-decoration: none;
+    color: var(--black)
+}
+.line{
+    background: var(--black);
+    height: 2px;
+    width: 100%;
+    transition: width 0.5s;
+}
+.nav-item:hover .line{
+    width: 0%;
+}
+footer a:hover .line{
+    width: 0%;
+}
+footer a .line{
+    background: black
+    height: 2px;
+    transition: width 0.5s;
+}
+footer a{
+    text-decoration: none;
+    color: white
+}
+footer a:hover{
+    text-decoration: none;
+    color: white
+}
+.element img{
+    height: auto;
+    width: 100%;
+    contain: content
+}
+.medidas{
+    list-style-type:none;
+    padding-left: 0;
+}

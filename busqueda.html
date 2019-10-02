@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>busqueda</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" rel="stylesheet"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="./index.css">
+</head>
+
+<body>
+    <header class="bg-orange">
+        <nav class="navbar navbar-expand-lg bg-orange">
+            <a class="navbar-brand" href="./index.html">
+                <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="191" height="50" version="1.1"
+                    style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+                    viewBox="0 0 1000 261" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <g id="Capa_x0020_1">
+                        <metadata id="CorelCorpID_0Corel-Layer" />
+                        <g id="_1693941436640">
+                            <polygon points="727.81,177.14 777.91,127.03 791.55,127.03 729.02,189.56 " />
+                            <polygon points="729.75,223.68 824.79,128.64 839.32,127.76 729.5,237.57 " />
+                            <polygon points="749.7,252.22 875.62,126.3 890,125.56 763.34,252.22 " />
+                            <polygon points="796.62,253.78 922.54,127.87 936.18,127.87 807.03,257.02 " />
+                            <polygon points="843.45,255.44 969.37,129.52 983.01,129.52 857.09,255.44 " />
+                            <polygon points="887.5,259.88 998.46,148.92 998.91,162.11 900.82,260.2 " />
+                            <polygon points="940.28,255.59 996.97,198.9 997.16,212.34 953.47,256.04 " />
+                            <path
+                                d="M39.03 22.19c0,3.08 -2.5,5.56 -5.57,5.56 -3.08,0 -5.58,-2.48 -5.58,-5.56 0,-3.08 2.5,-5.57 5.58,-5.57 3.07,0 5.57,2.49 5.57,5.57z" />
+                            <path
+                                d="M76.1 22.19c0,3.08 -2.5,5.56 -5.57,5.56 -3.08,0 -5.57,-2.48 -5.57,-5.56 0,-3.08 2.49,-5.57 5.57,-5.57 3.07,0 5.57,2.49 5.57,5.57z" />
+                            <path
+                                d="M113.17 22.19c0,3.08 -2.5,5.56 -5.57,5.56 -3.08,0 -5.57,-2.48 -5.57,-5.56 0,-3.08 2.49,-5.57 5.57,-5.57 3.07,0 5.57,2.49 5.57,5.57z" />
+                            <path
+                                d="M39.03 52.24c0,3.08 -2.5,5.58 -5.57,5.58 -3.08,0 -5.58,-2.5 -5.58,-5.58 0,-3.07 2.5,-5.57 5.58,-5.57 3.07,0 5.57,2.5 5.57,5.57z" />
+                            <path
+                                d="M76.1 52.24c0,3.08 -2.5,5.58 -5.57,5.58 -3.08,0 -5.57,-2.5 -5.57,-5.58 0,-3.07 2.49,-5.57 5.57,-5.57 3.07,0 5.57,2.5 5.57,5.57z" />
+                            <path
+                                d="M113.17 52.24c0,3.08 -2.5,5.58 -5.57,5.58 -3.08,0 -5.57,-2.5 -5.57,-5.58 0,-3.07 2.49,-5.57 5.57,-5.57 3.07,0 5.57,2.5 5.57,5.57z" />
+                            <path
+                                d="M38.44 82.3c0,3.08 -2.5,5.57 -5.58,5.57 -3.07,0 -5.56,-2.49 -5.56,-5.57 0,-3.08 2.49,-5.57 5.56,-5.57 3.08,0 5.58,2.49 5.58,5.57z" />
+                            <path
+                                d="M75.51 82.3c0,3.08 -2.5,5.57 -5.57,5.57 -3.08,0 -5.57,-2.49 -5.57,-5.57 0,-3.08 2.49,-5.57 5.57,-5.57 3.07,0 5.57,2.49 5.57,5.57z" />
+                            <path
+                                d="M112.58 82.3c0,3.08 -2.5,5.57 -5.57,5.57 -3.08,0 -5.57,-2.49 -5.57,-5.57 0,-3.08 2.49,-5.57 5.57,-5.57 3.07,0 5.57,2.49 5.57,5.57z" />
+                            <path
+                                d="M38.44 112.35c0,3.09 -2.5,5.58 -5.58,5.58 -3.07,0 -5.56,-2.49 -5.56,-5.58 0,-3.07 2.49,-5.56 5.56,-5.56 3.08,0 5.58,2.49 5.58,5.56z" />
+                            <path
+                                d="M75.51 112.35c0,3.09 -2.5,5.58 -5.57,5.58 -3.08,0 -5.57,-2.49 -5.57,-5.58 0,-3.07 2.49,-5.56 5.57,-5.56 3.07,0 5.57,2.49 5.57,5.56z" />
+                            <path
+                                d="M112.58 112.35c0,3.09 -2.5,5.58 -5.57,5.58 -3.08,0 -5.57,-2.49 -5.57,-5.58 0,-3.07 2.49,-5.56 5.57,-5.56 3.07,0 5.57,2.49 5.57,5.56z" />
+                            <path
+                                d="M149.23 22.97c0,3.07 -2.5,5.57 -5.57,5.57 -3.08,0 -5.57,-2.5 -5.57,-5.57 0,-3.08 2.49,-5.57 5.57,-5.57 3.07,0 5.57,2.49 5.57,5.57z" />
+                            <path
+                                d="M186.3 22.97c0,3.07 -2.5,5.57 -5.57,5.57 -3.08,0 -5.57,-2.5 -5.57,-5.57 0,-3.08 2.49,-5.57 5.57,-5.57 3.07,0 5.57,2.49 5.57,5.57z" />
+                            <path
+                                d="M149.23 53.02c0,3.08 -2.5,5.57 -5.57,5.57 -3.08,0 -5.57,-2.49 -5.57,-5.57 0,-3.08 2.49,-5.57 5.57,-5.57 3.07,0 5.57,2.49 5.57,5.57z" />
+                            <path
+                                d="M186.3 53.02c0,3.08 -2.5,5.57 -5.57,5.57 -3.08,0 -5.57,-2.49 -5.57,-5.57 0,-3.08 2.49,-5.57 5.57,-5.57 3.07,0 5.57,2.49 5.57,5.57z" />
+                            <path
+                                d="M148.64 83.08c0,3.07 -2.5,5.57 -5.57,5.57 -3.08,0 -5.57,-2.5 -5.57,-5.57 0,-3.08 2.49,-5.57 5.57,-5.57 3.07,0 5.57,2.49 5.57,5.57z" />
+                            <path
+                                d="M185.71 83.08c0,3.07 -2.5,5.57 -5.57,5.57 -3.08,0 -5.57,-2.5 -5.57,-5.57 0,-3.08 2.49,-5.57 5.57,-5.57 3.07,0 5.57,2.49 5.57,5.57z" />
+                            <path
+                                d="M148.64 113.13c0,3.08 -2.5,5.58 -5.57,5.58 -3.08,0 -5.57,-2.5 -5.57,-5.58 0,-3.07 2.49,-5.56 5.57,-5.56 3.07,0 5.57,2.49 5.57,5.56z" />
+                            <path
+                                d="M185.71 113.13c0,3.08 -2.5,5.58 -5.57,5.58 -3.08,0 -5.57,-2.5 -5.57,-5.58 0,-3.07 2.49,-5.56 5.57,-5.56 3.07,0 5.57,2.49 5.57,5.56z" />
+                            <path
+                                d="M733.7 251.47l256.65 0 0 -116.04 -256.65 0 0 116.04zm266.3 9.65l-275.95 0 0 -135.34 275.95 0 0 135.34z" />
+                            <path
+                                d="M9.65 125.68l194.1 0 0 -116.04 -194.1 0 0 116.04zm203.75 9.65l-213.4 0 0 -135.33 213.4 0 0 135.33z" />
+                            <path
+                                d="M248.19 39.45c0.08,-0.73 0.82,-1.3 1.48,-1.3l1.31 0c0.41,0 1.15,0.32 1.39,0.81l19.03 35.42 0.16 0 19.02 -35.42c0.25,-0.49 0.99,-0.81 1.39,-0.81l1.32 0c0.65,0 1.39,0.57 1.47,1.3l9.27 55.11c0.16,1.06 -0.58,1.8 -1.56,1.8l-9.67 0c-0.74,0 -1.48,-0.66 -1.56,-1.31l-3.69 -25.34 -0.17 0 -13.77 26.57c-0.25,0.49 -0.99,0.9 -1.39,0.9l-1.48 0c-0.49,0 -1.15,-0.41 -1.4,-0.9l-13.85 -26.57 -0.16 0 -3.61 25.34c-0.09,0.65 -0.74,1.31 -1.56,1.31l-9.67 0c-0.99,0 -1.73,-0.74 -1.57,-1.8l9.27 -55.11z" />
+                            <path
+                                d="M326.5 40.52c0,-0.82 0.65,-1.55 1.56,-1.55l33.94 0c0.91,0 1.56,0.73 1.56,1.55l0 8.94c0,0.82 -0.65,1.55 -1.56,1.55l-22.71 0 0 10.18 18.7 0c0.82,0 1.55,0.73 1.55,1.55l0 8.94c0,0.9 -0.73,1.55 -1.55,1.55l-18.7 0 0 11.07 22.71 0c0.91,0 1.56,0.75 1.56,1.56l0 8.94c0,0.82 -0.65,1.56 -1.56,1.56l-33.94 0c-0.91,0 -1.56,-0.74 -1.56,-1.56l0 -54.28z" />
+                            <path
+                                d="M411.54 63.48c3.36,0 6.22,-3.12 6.22,-6.56 0,-3.44 -2.86,-6.23 -6.22,-6.23l-12.14 0 0 12.79 12.14 0zm-25.01 -22.96c0,-0.82 0.65,-1.55 1.55,-1.55l24.52 0c9.84,0 17.87,7.94 17.87,17.7 0,7.55 -5,13.61 -12.13,16.48l11.23 20.83c0.57,1.07 0,2.38 -1.39,2.38l-10.91 0c-0.65,0 -1.15,-0.41 -1.31,-0.74l-10.9 -21.73 -5.66 0 0 20.91c0,0.82 -0.74,1.56 -1.56,1.56l-9.76 0c-0.9,0 -1.55,-0.74 -1.55,-1.56l0 -54.28z" />
+                            <path
+                                d="M212.98 125.68l249.46 0 0 -116.04 -249.46 0 0 116.04zm259.11 9.65l-268.76 0 0 -135.33 268.76 0 0 135.33z" />
+                            <path
+                                d="M531.17 38.14c8.2,0 14.27,2.55 19.84,7.63 0.74,0.66 0.74,1.63 0.08,2.29l-6.39 6.65c-0.58,0.57 -1.48,0.57 -2.05,0 -3.04,-2.71 -7.05,-4.18 -11.07,-4.18 -9.27,0 -16.07,7.7 -16.07,16.89 0,9.1 6.89,16.64 16.15,16.64 3.86,0 8.04,-1.39 10.99,-3.93 0.57,-0.5 1.64,-0.5 2.13,0.07l6.4 6.81c0.57,0.58 0.49,1.64 -0.09,2.22 -5.57,5.4 -12.62,7.95 -19.92,7.95 -16.4,0 -29.6,-13.04 -29.6,-29.44 0,-16.4 13.2,-29.6 29.6,-29.6z" />
+                            <path
+                                d="M599.23 76.68l-6.23 -13.53 -0.08 0 -6.15 13.53 12.46 0zm-33.7 17.54l25.67 -55.18c0.24,-0.49 0.81,-0.9 1.39,-0.9l0.82 0c0.57,0 1.15,0.41 1.39,0.9l25.67 55.18c0.49,1.07 -0.17,2.14 -1.4,2.14l-9.1 0c-1.48,0 -2.13,-0.49 -2.87,-2.05l-2.95 -6.48 -22.31 0 -2.94 6.56c-0.41,0.99 -1.31,1.97 -2.96,1.97l-9.01 0c-1.23,0 -1.89,-1.07 -1.4,-2.14z" />
+                            <path
+                                d="M659.83 84.22c9.26,0 15.99,-7.29 15.99,-16.64 0,-9.26 -6.73,-16.57 -15.99,-16.57l-7.87 0 0 33.21 7.87 0zm-20.66 -43.7c0,-0.82 0.65,-1.56 1.47,-1.56l20.01 0c15.82,0 28.78,12.88 28.78,28.62 0,15.91 -12.96,28.78 -28.78,28.78l-20.01 0c-0.82,0 -1.47,-0.74 -1.47,-1.56l0 -54.28z" />
+                            <path
+                                d="M736.66 84.06c9.02,0 16.4,-7.38 16.4,-16.32 0,-9.01 -7.38,-16.48 -16.4,-16.48 -8.93,0 -16.31,7.47 -16.31,16.48 0,8.94 7.38,16.32 16.31,16.32zm0 -45.92c16.4,0 29.52,13.2 29.52,29.6 0,16.4 -13.12,29.44 -29.52,29.44 -16.4,0 -29.43,-13.04 -29.43,-29.44 0,-16.4 13.03,-29.6 29.43,-29.6z" />
+                            <path
+                                d="M471.37 125.68l326.93 0 0 -116.04 -326.93 0 0 116.04zm336.58 9.65l-346.23 0 0 -135.33 346.23 0 0 135.33z" />
+                            <path
+                                d="M148.15 251.47l194.1 0 0 -116.04 -194.1 0 0 116.04zm203.75 9.64l-213.4 0 0 -135.33 213.4 0 0 135.33z" />
+                            <path
+                                d="M207.61 210.56c3.2,0 5.9,-2.63 5.9,-5.99 0,-3.28 -3.53,-5.74 -6.72,-5.74l-6.64 0 0 11.73 7.46 0zm-1.07 -22.39c3.12,0 5.74,-2.62 5.74,-5.9 0,-3.28 -2.62,-5.58 -5.74,-5.58l-6.39 0 0 11.48 6.39 0zm-19.18 -21.73c0,-0.82 0.65,-1.55 1.56,-1.55l19.1 0c9.67,0 17.63,6.64 17.63,15.24 0,6.32 -5.66,10.91 -9.51,12.96 4.34,1.8 10.98,5.82 10.98,13.37 0,9.18 -8.11,15.82 -17.87,15.82l-20.33 0c-0.91,0 -1.56,-0.74 -1.56,-1.56l0 -54.28z" />
+                            <path
+                                d="M274.77 209.98c9.02,0 16.4,-7.38 16.4,-16.32 0,-9.01 -7.38,-16.47 -16.4,-16.47 -8.94,0 -16.32,7.46 -16.32,16.47 0,8.94 7.38,16.32 16.32,16.32zm0 -45.92c16.4,0 29.52,13.21 29.52,29.6 0,16.4 -13.12,29.44 -29.52,29.44 -16.4,0 -29.44,-13.04 -29.44,-29.44 0,-16.39 13.04,-29.6 29.44,-29.6z" />
+                            <path
+                                d="M406.99 209.87c9.26,0 15.99,-7.29 15.99,-16.64 0,-9.26 -6.73,-16.57 -15.99,-16.57l-7.87 0 0 33.21 7.87 0zm-20.66 -43.7c0,-0.82 0.65,-1.56 1.47,-1.56l20.01 0c15.83,0 28.78,12.88 28.78,28.62 0,15.9 -12.95,28.78 -28.78,28.78l-20.01 0c-0.82,0 -1.47,-0.74 -1.47,-1.56l0 -54.28z" />
+                            <path
+                                d="M458.57 166.17c0,-0.82 0.65,-1.55 1.55,-1.55l33.95 0c0.91,0 1.56,0.73 1.56,1.55l0 8.94c0,0.82 -0.65,1.55 -1.56,1.55l-22.71 0 0 10.18 18.7 0c0.81,0 1.55,0.73 1.55,1.55l0 8.94c0,0.9 -0.74,1.55 -1.55,1.55l-18.7 0 0 11.07 22.71 0c0.91,0 1.56,0.75 1.56,1.56l0 8.94c0,0.82 -0.65,1.56 -1.56,1.56l-33.95 0c-0.9,0 -1.55,-0.74 -1.55,-1.56l0 -54.28z" />
+                            <path
+                                d="M543.93 163.88c6.89,0 14.43,2.86 20,7.7 0.74,0.58 0.82,1.56 0.17,2.22l-6.48 6.88c-0.66,0.58 -1.56,0.58 -2.21,0.09 -3.12,-2.88 -6.73,-3.94 -10.75,-3.94 -8.93,0 -16.14,7.55 -16.14,16.56 0,8.94 7.3,16.32 16.23,16.32 2.37,0 4.83,-0.33 7.29,-1.31l0 -4.76 -5.16 0c-0.9,0 -1.56,-0.65 -1.56,-1.48l0 -8.11c0,-0.9 0.66,-1.56 1.56,-1.56l16.48 0c0.82,0 1.47,0.73 1.47,1.56l0.09 22.05c0,0.42 -0.33,1.07 -0.66,1.32 0,0 -8.44,5.33 -20.33,5.33 -16.32,0 -29.44,-12.96 -29.44,-29.36 0,-16.4 13.12,-29.51 29.44,-29.51z" />
+                            <path
+                                d="M614.45 202.33l-6.23 -13.53 -0.09 0 -6.15 13.53 12.47 0zm-33.7 17.54l25.67 -55.18c0.24,-0.49 0.81,-0.9 1.39,-0.9l0.81 0c0.58,0 1.16,0.41 1.4,0.9l25.67 55.18c0.48,1.07 -0.17,2.14 -1.4,2.14l-9.1 0c-1.48,0 -2.13,-0.49 -2.87,-2.05l-2.95 -6.48 -22.31 0 -2.94 6.56c-0.41,0.98 -1.32,1.97 -2.96,1.97l-9.01 0c-1.23,0 -1.89,-1.07 -1.4,-2.14z" />
+                            <path
+                                d="M651.11 214.22l3.85 -6.81c0.66,-1.06 2.21,-0.9 2.79,-0.49 0.32,0.17 6.23,4.51 11.64,4.51 3.28,0 5.66,-2.05 5.66,-4.92 0,-3.44 -2.87,-6.07 -8.45,-8.28 -7.05,-2.79 -15.9,-8.28 -15.9,-18.12 0,-8.12 6.31,-16.32 18.94,-16.32 8.52,0 15.09,4.35 17.55,6.15 0.98,0.58 0.81,2.05 0.49,2.63l-4.18 6.31c-0.58,0.9 -2.05,1.64 -2.79,1.07 -0.74,-0.42 -6.73,-4.92 -11.73,-4.92 -2.95,0 -5.16,1.96 -5.16,4.18 0,3.03 2.45,5.33 8.93,7.95 6.4,2.55 16.57,7.55 16.57,18.69 0,8.45 -7.3,16.98 -19.35,16.98 -10.66,0 -16.57,-4.43 -18.45,-6.31 -0.82,-0.83 -1.07,-1.15 -0.41,-2.3z" />
+                            <path
+                                d="M351.94 251.47l372.48 0 0 -116.04 -372.48 0 0 116.04zm382.13 9.65l-391.77 0 0 -135.34 391.77 0 0 135.34z" />
+                        </g>
+                    </g>
+                </svg>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse black" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                </ul>
+                <div class="nav-item ml-3 mr-3">
+                    <a class="nav-link" href="#">
+                        <b>Bodegas Cerca de mi</b>
+                        <div class="line"></div>
+                    </a>
+                </div>
+                <div class="nav-item ml-3 mr-3">
+                    <a class="nav-link" href="#">
+                        <b>Bodegas con retiro</b>
+                        <div class="line"></div>
+                    </a>
+                </div>
+                <div class="nav-item ml-3 mr-3">
+                    <a class="nav-link" href="#">
+                        <b>Bodegas portables</b>
+                    </a>
+                </div>
+                <div class="nav-item ml-3 mr-5">
+                    <a class="nav-link" href="#">
+                        <b>Filetes</b>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <section class="mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3">
+                    <button class="btn btn-block bg-orange black">Ver resultados en el mapa</button>
+                    <div class="mt-5" id="filtros">
+                        <h3>Filtros</h3>
+                    </div>
+                </div>
+                <div class="col-sm-9">
+                    <div id="busqueda" class="text-center">
+                        <h3>Bodegas disponibles de Huechuraba, Santiago.</h3>
+                        <h5 class="mb-3">Encuentra bodegas cerca tuyo.</h5>
+                        <form class="form-inline my-2 my-lg-0 row">
+                            <div class="col-sm-9 pl-3">
+                                <input class="form-control w-75 float-right" type="search" placeholder="Search"
+                                    aria-label="Search">
+                            </div>
+                            <div class="col-sm-2 pl-0">
+                                <button class="btn bg-orange black float-left my-2 my-sm-0"
+                                    type="submit">Search</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="mt-3 mb-3">
+                        1 - 15 de 223 bodegas cerca de Huechuraba, Santiago
+                    </div>
+                    <div class="element mt-4 mb-4">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <img src="https://source.unsplash.com/1000x500/?warehouse" class="img-responsive"
+                                    alt="">
+                            </div>
+                            <div class="col-sm-8">
+                                <h3>Mini Bodega Super</h3>
+                                <h3>Rinconada El Salto 405, Huechuraba, Stgo</h3>
+                                <span>Huechuraba, Santiago 1 km de distancia</span>
+                                <div class="mt-3">
+                                    <h5>Mostrar Telefono</h5>
+                                </div>
+                                <div>
+                                    <ul class="medidas">
+                                        <li>
+                                            <div>
+                                                <h5 class="d-inline-block">10 m2</h5>
+                                                <i class="fas fa-chevron-right float-right ml-2"></i>
+                                                <h5 class="d-inline-block float-right">$75.000</h5>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div>
+                                                <h5 class="d-inline-block">15 m2</h5>
+                                                <i class="fas fa-chevron-right float-right ml-2"></i>
+                                                <h5 class="d-inline-block float-right">$120.000</h5>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div>
+                                                <h5 class="d-inline-block">20 m2</h5>
+                                                <i class="fas fa-chevron-right float-right ml-2"></i>
+                                                <h5 class="d-inline-block float-right">$150.000</h5>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="element mt-4 mb-4">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <img src="https://source.unsplash.com/1600x900/?warehouse" class="img-responsive"
+                                    alt="">
+                            </div>
+                            <div class="col-sm-8">
+                                <h3>ABC Bodegas Ltda.</h3>
+                                <h3>Rinconada El Salto 405, Huechuraba, Stgo.</h3>
+                                <span>Huechuraba, Santiago 1 km de distancia</span>
+                                <div class="mt-3">
+                                    <h5>Mostrar Telefono</h5>
+                                </div>
+                                <div>
+                                    <ul class="medidas">
+                                        <li>
+                                            <div>
+                                                <h5 class="d-inline-block">10 m2</h5>
+                                                <i class="fas fa-chevron-right float-right ml-2"></i>
+                                                <h5 class="d-inline-block float-right">$75.000</h5>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div>
+                                                <h5 class="d-inline-block">15 m2</h5>
+                                                <i class="fas fa-chevron-right float-right ml-2"></i>
+                                                <h5 class="d-inline-block float-right">$120.000</h5>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div>
+                                                <h5 class="d-inline-block">20 m2</h5>
+                                                <i class="fas fa-chevron-right float-right ml-2"></i>
+                                                <h5 class="d-inline-block float-right">$150.000</h5>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="element mt-4 mb-4">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <img src="https://source.unsplash.com/1500x750/?warehouse" class="img-responsive"
+                                    alt="">
+                            </div>
+                            <div class="col-sm-8">
+                                <h3>Bodegas MB</h3>
+                                <h3>Camino B 1345, Huechuraba, Stgo.</h3>
+                                <span>Huechuraba, Santiago 1,1 km de distancia</span>
+                                <div class="mt-3">
+                                    <h5>Mostrar Telefono</h5>
+                                </div>
+                                <div>
+                                    <ul class="medidas">
+                                        <li>
+                                            <div>
+                                                <h5 class="d-inline-block">10 m2</h5>
+                                                <i class="fas fa-chevron-right float-right ml-2"></i>
+                                                <h5 class="d-inline-block float-right">$75.000</h5>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div>
+                                                <h5 class="d-inline-block">15 m2</h5>
+                                                <i class="fas fa-chevron-right float-right ml-2"></i>
+                                                <h5 class="d-inline-block float-right">$120.000</h5>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div>
+                                                <h5 class="d-inline-block">20 m2</h5>
+                                                <i class="fas fa-chevron-right float-right ml-2"></i>
+                                                <h5 class="d-inline-block float-right">$150.000</h5>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"
+        integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
