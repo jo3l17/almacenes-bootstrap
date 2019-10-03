@@ -16,7 +16,7 @@
 <body>
     <header class="bg-orange">
         <nav class="navbar navbar-expand-lg bg-orange">
-            <a class="navbar-brand" href="./index.html">
+            <a class="navbar-brand" href="index.html">
                 <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="191" height="50" version="1.1"
                     style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
                     viewBox="0 0 1000 261" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -114,8 +114,9 @@
                     </g>
                 </svg>
             </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse"
+                data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse black" id="navbarSupportedContent">
@@ -140,7 +141,7 @@
                 </div>
                 <div class="nav-item ml-3 mr-5">
                     <a class="nav-link" href="#">
-                        <b>Filetes</b>
+                        <b>Fletes</b>
                     </a>
                 </div>
             </div>
@@ -149,150 +150,456 @@
     <section class="mt-5">
         <div class="container">
             <div class="row">
-                <div class="col-sm-3">
-                    <button class="btn btn-block bg-orange black">Ver resultados en el mapa</button>
-                    <div class="mt-5" id="filtros">
-                        <h3>Filtros</h3>
+                <div class="col-md-3">
+                    <div id='mapa-button' class="mb-5">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="515" height="175" viewBox="0 0 480 175"
+                            class="svg static-map">
+                            <g fill="none" fill-rule="evenodd">
+                                <path fill="#EAEAEA" fill-rule="nonzero" d="M-17.9-16.2h507.7v204.6H-17.9"></path>
+                                <path fill="#CBE6A3" fill-rule="nonzero"
+                                    d="M386.6 162l-39.4-24.2 41-58.7 23.6 1.2-25.2 81.7zm-183.5-36.8l-30.8-17.8 13.9-24 33.8 18.3-7.3 14.5-5.1 1.1-4.5 7.9zM47.2 22.3L59.4-1.3l3.7-2.1 23.3 14.8-3.6 7.8-23.1 2.9-4.7 5.4-7.8-5.2zM-4.7 173.8l18.2-32.1 16.1 8.8-20.5 31.9-13.8-8.6zM139.6 34.3l16.2 8.8 10-21.8-9.9-4.9-10.1 8.3-6.2 9.6zm169.3 142l-40.7-29.8-20.4 41.9 34.6-2.5 26.5-9.6z"
+                                    opacity=".5"></path>
+                                <path stroke="#CECECE" stroke-width="2.075"
+                                    d="M162.7 124.4l40.8 22.5m-7.8 16s9-18.3 10.6-20.1c1.4-1.6 4.2-4 8-1.9s18.9 10 18.9 10m-47.7-68.7l63.1 35.4m-28.7-15.9s-7.6 13.7-7.8 14.4c-.2.7-2.9 1-4.3 1.4-1.4.4-13.3 24.4-13.3 24.4m8-17.4l-30.8-17.1M24.7 122L-2 169.7">
+                                </path>
+                                <path stroke="#CECECE" stroke-width="2.075"
+                                    d="M12.5 177.6l47.4-81.3s2.4-6.9 10-6.9 23.5 8 25.9 8.6c2.4.6 32.9 25.6 32.9 25.6l40.5-77.8"
+                                    stroke-linecap="round"></path>
+                                <path stroke="#CECECE" stroke-width="2.075" d="M-3 97.4l22.5-39.8 26.6-35.3 18-32.1">
+                                </path>
+                                <path stroke="#CECECE" stroke-width="2.075"
+                                    d="M70 89.4s-5.9-51.5-7.6-55.3c-1.7-3.8-16.3-11.8-16.3-11.8"></path>
+                                <path stroke="#CECECE" stroke-width="2.075" d="M101.8 20.6L52-9.2M175.1 98.4l-66.4-36.3"
+                                    stroke-linecap="round"></path>
+                                <path stroke="#CECECE" stroke-width="2.075"
+                                    d="M104 101.7l33.2-62.3s6.7-16.1 10.9-16.6 15-15 20.8-31.1M4.4 85.1l45.7 27m168.6-41.5l9.9-16.1s13-6.2 9.9-15c-3.1-8.8-21.8-15.6-21.8-15.6m-6.3 9.8l-21.3-10.9s11.4-30.6 14.5-36.3M55.4 28.2s1-5.9 6.2-5.5c5.2.3 21.1-3.5 21.1-3.5s5.9-10.7 7.6-11.4c1.7-.7 13.8-6.2 13.8-6.2l6.9-12.5M62.7 91.5s-8.3-7.6-11.4-8c0 0 0-8 4.2-9.3 4.2-1.4 10.7-6.9 12.5-6.9 1.8 0 20-4.5 20-4.5s8.3-14.2-9-10.4c-17.3 3.8-21.8 4.2-21.8 4.2s-11.4 5.5-12.8 8C43 67 32.6 86.3 39.9 87c7.3.7 9.3 1.7 11.4-3.5M-8.6 11.6S16.3 22.3 18 24.7c1.7 2.4-5.5 13.8-6.6 14.2-1 .3-29.7-20.4-29.7-20.4">
+                                </path>
+                                <path stroke="#CECECE" stroke-width="2.075"
+                                    d="M-.3 43.8s10.7 3.8 11.1 7.3c.3 3.5-4.2 6.9-1 9.3 3.1 2.4 15.2 5.5 15.2 5.5l3.5 3.1m37.3 75.8l-23.2 41.8"
+                                    stroke-linecap="round"></path>
+                                <path stroke="#CECECE" stroke-width="2.075"
+                                    d="M72.7 162.4s-6.9 2.4-8.6 6.7l-49.3-27m41.3 46.3l8-19.2m47-48.3s4.2 20.4-24.2 65.7">
+                                </path>
+                                <path stroke="#CECECE" stroke-width="2.075"
+                                    d="M139.8 34.8l53.3 31.1M119.4-1.9l46.4 23.2-10 21.8 23.1-49.8m47.8 12.1l63.5 33.9m-67.3-25.6s18.3 10 19.7 11.1c1.4 1 10.4 14.5 3.8 27.7-6.6 13.2-7.7 12.4-9.7 13.8-3.5 2.4-10 .3-15.2-3.5-5.2-3.8-19.4-10.4-19.4-10.4m43.6 78.2l22.1 15.8 51 36.6m-51-36.6c.3 2.7-20.4 43.6-20.4 43.6m-140.1-43.5l73.4 41.2M120.5 55.2l7.3 5.9s5.9-.7 7.3-.3c1.4.4 9.7 6.2 9.7 6.2l6.6 1.7 3.5 1.4m115 9L253 69.7s5.9-13.1 5.9-14.5c0-1.4-1.4-28 .7-31.1"
+                                    stroke-linecap="round"></path>
+                                <path stroke="#CECECE" stroke-width="2.075" d="M-3.7 1.2L15 11.6l9.3-18.3"></path>
+                                <path stroke="#CECECE" stroke-width="2.075" d="M41.6 10.9L31.9 4l.4-12.5"
+                                    stroke-linecap="round"></path>
+                                <path fill="#CBE6A3" fill-rule="nonzero"
+                                    d="M351.2 44.7l2.8-26.5-1.9-3.7-27.7-.5-1.2 8.5 17.7 15.1.9 7.1" opacity=".5">
+                                </path>
+                                <path stroke="#CECECE" stroke-width="2.075" d="M351.3 143.2l3.7-53.8-2.9-44.1 2.7-36.8">
+                                </path>
+                                <path stroke="#CECECE" stroke-width="2.075"
+                                    d="M279.6 104.9s48.9-56.5 52.5-58.7c3.5-2.2 20-.9 20-.9"></path>
+                                <path stroke="#CECECE" stroke-width="2.075" d="M306.5 13.2l58 2.5"
+                                    stroke-linecap="round"></path>
+                                <path stroke="#CECECE" stroke-width="2.075"
+                                    d="M352.4 120.6l-53-2.5m41.7-73s2.4-5.5-2.2-8c-4.5-2.6-15.7-14.5-15.7-14.5s1-12.2-.1-13.7S315-4 315-4l1.1-14.2M288.6 94.3s22.7-2.1 25.5-.7c0 0 4.4-6.6 1.7-10.1s-5.2-11.7-6.6-12.6c-1.4-1-14.3-14.8-14.3-14.8s.9-16.4 13.2-3.7C320.4 65.1 324 67.8 324 67.8s6.5 10.9 6.3 13.7c-.2 2.8-2.2 24.7-8.6 21.3-6.4-3.4-8.8-3.7-7.6-9.2m186.4-31s-123.5-1-126.3.1c-2.8 1.1-3 14.6-2.3 15.5.7.9 118 4 118 4">
+                                </path>
+                                <path stroke="#CECECE" stroke-width="2.075"
+                                    d="M379 88.7s-11-2.7-13.2 0c-2.2 2.7-.3 8.1-4.3 8.4-3.9.3-15.8-3.7-15.8-3.7l-4.6.7"
+                                    stroke-linecap="round"></path>
+                                <path stroke="#CECECE" stroke-width="2.075" d="M489.8 55L384 53.4l4.3-38.7"></path>
+                                <path stroke="#CECECE" stroke-width="2.075" d="M353.4 38.5l20.6-.7 25.5-41.2"
+                                    stroke-linecap="round"></path>
+                                <path stroke="#FFF" stroke-width="5.189"
+                                    d="M129.1 183.9L238.8-16.8M-17.9 107.4s29.4 18 91.3 14.2c61.9-3.8 82.3 5.2 112.8 33.9s49.1 40.5 49.1 40.5m-22.8-4.2L318.8-16.8m-69 136.8l253.3 135.3M72 122.3l78.2-142.5">
+                                </path>
+                                <path stroke="#CECECE" stroke-width="2.234"
+                                    d="M411.8 80.3L386.6 162m25.2 13L437 80.3m.6 94.7l25.2-94.7"></path>
+                                <path stroke="#FFF" stroke-width="5.189" d="M196.9 60.7L450.2 196"></path>
+                                <path stroke="#CECECE" stroke-width="2.234" d="M399.2 119.4l90.6 8.9"></path>
+                                <path stroke="#FFF" stroke-width="5.189" d="M455.7-16.4L287.4 216.2"></path>
+                                <path stroke="#CECECE" stroke-width="2.075"
+                                    d="M462.8 0l-18.3 23.9s-7.2 14.9 2.8 15.4 22.5-4.5 22.5-4.5l13-15.2"></path>
+                            </g>
+                        </svg>
+                        <button class="btn btn-block bg-orange white">
+                            <b>Ver resultados en el mapa</b>
+                        </button>
+                    </div>
+                    <div id="filtros">
+                        <div class="filtro-contenido">
+                            <button id="cerrar-filtros-mobile" class="btn bg-orange white float-right">Cerrar</button>
+                            <h3>Filtros</h3>
+                            <div id="filtro-tamaño">
+                                <p>Tamaño de unidades</p>
+                                <ul class="grupo-filtro">
+                                    <li class="item-filtro">
+                                        <button class="w-100 btn btn-medidas border border-grey" type="button">
+                                            <span class="d-inline-flex align-center">
+                                                <span class="icon">
+                                                    <img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDIxLjAuMiwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IgoJIHZpZXdCb3g9IjAgMCAyMzcgMjg4IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAyMzcgMjg4OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+CjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+Cgkuc3Qwe2ZpbGw6I0ZGQ0MwMDt9Cgkuc3Qxe2ZpbGw6bm9uZTtzdHJva2U6IzAwMDAwMDtzdHJva2Utd2lkdGg6MztzdHJva2UtbGluZWNhcDpyb3VuZDtzdHJva2UtbGluZWpvaW46cm91bmQ7c3Ryb2tlLW1pdGVybGltaXQ6MTA7fQoJLnN0MntmaWxsOiNGRkZGRkY7c3Ryb2tlOiMwMDAwMDA7c3Ryb2tlLXdpZHRoOjI7c3Ryb2tlLWxpbmVjYXA6cm91bmQ7c3Ryb2tlLWxpbmVqb2luOnJvdW5kO3N0cm9rZS1taXRlcmxpbWl0OjEwO30KCS5zdDN7ZmlsbDojRkZGRkZGO3N0cm9rZTojMDAwMDAwO3N0cm9rZS13aWR0aDozO3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2UtbWl0ZXJsaW1pdDoxMDt9Cgkuc3Q0e2ZpbGw6bm9uZTtzdHJva2U6IzAwMDAwMDtzdHJva2Utd2lkdGg6MztzdHJva2UtbGluZWNhcDpyb3VuZDtzdHJva2UtbWl0ZXJsaW1pdDoxMDt9Cgkuc3Q1e2ZpbGw6bm9uZTtzdHJva2U6IzAwMDAwMDtzdHJva2Utd2lkdGg6MjtzdHJva2UtbGluZWNhcDpyb3VuZDtzdHJva2UtbGluZWpvaW46cm91bmQ7c3Ryb2tlLW1pdGVybGltaXQ6MTA7fQoJLnN0NntmaWxsOm5vbmU7c3Ryb2tlOiMwMDAwMDA7c3Ryb2tlLXdpZHRoOjI7c3Ryb2tlLW1pdGVybGltaXQ6MTA7fQoJLnN0N3tmaWxsOm5vbmU7c3Ryb2tlOiMwMDAwMDA7c3Ryb2tlLXdpZHRoOjM7c3Ryb2tlLWxpbmVqb2luOnJvdW5kO3N0cm9rZS1taXRlcmxpbWl0OjEwO30KCS5zdDh7ZmlsbDojRkZGRkZGO30KCS5zdDl7ZmlsbDpub25lO3N0cm9rZTojMDAwMDAwO3N0cm9rZS13aWR0aDoyO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2UtbWl0ZXJsaW1pdDoxMDt9Cgkuc3QxMHtmaWxsOiNGQ0ZDRkM7c3Ryb2tlOiMwMDAwMDA7c3Ryb2tlLXdpZHRoOjI7c3Ryb2tlLWxpbmVjYXA6cm91bmQ7c3Ryb2tlLWxpbmVqb2luOnJvdW5kO3N0cm9rZS1taXRlcmxpbWl0OjEwO30KCS5zdDExe2ZpbGw6bm9uZTtzdHJva2U6IzAwMDAwMDtzdHJva2Utd2lkdGg6Mi42NjA3O3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1taXRlcmxpbWl0OjEwO30KCS5zdDEye2ZpbGw6I0ZGQ0QwNTtzdHJva2U6IzAwMDAwMDtzdHJva2Utd2lkdGg6Mi42NjA3O3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1taXRlcmxpbWl0OjEwO30KCS5zdDEze2ZpbGw6I0ZGRkZGRjtzdHJva2U6IzAwMDAwMDtzdHJva2Utd2lkdGg6Mi42NjA3O3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1taXRlcmxpbWl0OjEwO30KCS5zdDE0e2ZpbGw6bm9uZTtzdHJva2U6IzAwMDAwMDtzdHJva2Utd2lkdGg6Mi41Mzg1O3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2UtbWl0ZXJsaW1pdDoxMDt9Cgkuc3QxNXtmaWxsOiNCMkIyQjI7c3Ryb2tlOiM3QzdDN0M7c3Ryb2tlLXdpZHRoOjI7c3Ryb2tlLWxpbmVjYXA6cm91bmQ7c3Ryb2tlLWxpbmVqb2luOnJvdW5kO3N0cm9rZS1taXRlcmxpbWl0OjEwO30KCS5zdDE2e2ZpbGw6I0Y3RjdGNztzdHJva2U6IzdDN0M3QztzdHJva2Utd2lkdGg6MjtzdHJva2UtbGluZWNhcDpyb3VuZDtzdHJva2UtbGluZWpvaW46cm91bmQ7c3Ryb2tlLW1pdGVybGltaXQ6MTA7fQoJLnN0MTd7ZmlsbDpub25lO3N0cm9rZTojN0M3QzdDO3N0cm9rZS13aWR0aDoyO3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2UtbWl0ZXJsaW1pdDoxMDt9Cgkuc3QxOHtmaWxsOiNGRkZGRkQ7c3Ryb2tlOiMwMDAwMDA7c3Ryb2tlLXdpZHRoOjM7c3Ryb2tlLWxpbmVjYXA6cm91bmQ7c3Ryb2tlLWxpbmVqb2luOnJvdW5kO3N0cm9rZS1taXRlcmxpbWl0OjEwO30KCS5zdDE5e2ZpbGw6I0ZGQ0MwMDtzdHJva2U6IzAwMDAwMDtzdHJva2Utd2lkdGg6MztzdHJva2UtbGluZWNhcDpyb3VuZDtzdHJva2UtbGluZWpvaW46cm91bmQ7c3Ryb2tlLW1pdGVybGltaXQ6MTA7fQoJLnN0MjB7ZmlsbDojOTE4RTgwO3N0cm9rZTojMDAwMDAwO3N0cm9rZS13aWR0aDozO3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2UtbWl0ZXJsaW1pdDoxMDt9Cgkuc3QyMXtmaWxsOiNCQ0IzOEU7c3Ryb2tlOiMwMDAwMDA7c3Ryb2tlLXdpZHRoOjM7c3Ryb2tlLWxpbmVjYXA6cm91bmQ7c3Ryb2tlLWxpbmVqb2luOnJvdW5kO3N0cm9rZS1taXRlcmxpbWl0OjEwO30KCS5zdDIye2ZpbGw6I0JDQjM4RTtzdHJva2U6Izc3NzI1RjtzdHJva2Utd2lkdGg6MztzdHJva2UtbGluZWNhcDpyb3VuZDtzdHJva2UtbGluZWpvaW46cm91bmQ7c3Ryb2tlLW1pdGVybGltaXQ6MTA7fQoJLnN0MjN7ZmlsbDojRTBEQUJGO3N0cm9rZTojMDAwMDAwO3N0cm9rZS13aWR0aDozO3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2UtbWl0ZXJsaW1pdDoxMDt9Cgkuc3QyNHtmaWxsOiM5MThFODA7c3Ryb2tlOiM1NDUzNEQ7c3Ryb2tlLXdpZHRoOjM7c3Ryb2tlLWxpbmVjYXA6cm91bmQ7c3Ryb2tlLWxpbmVqb2luOnJvdW5kO3N0cm9rZS1taXRlcmxpbWl0OjEwO30KCS5zdDI1e2ZpbGw6bm9uZTtzdHJva2U6IzAwMDAwMDtzdHJva2Utd2lkdGg6NTtzdHJva2UtbGluZWNhcDpyb3VuZDtzdHJva2UtbGluZWpvaW46cm91bmQ7c3Ryb2tlLW1pdGVybGltaXQ6MTA7fQoJLnN0MjZ7ZmlsbDojQjJBODdGO3N0cm9rZTojMDAwMDAwO3N0cm9rZS13aWR0aDozO3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2UtbWl0ZXJsaW1pdDoxMDt9Cgkuc3QyN3tmaWxsOiNCMkIyQjI7fQoJLnN0Mjh7ZmlsbDojN0M3QzdDO30KCS5zdDI5e2ZpbGw6I0Y3RjdGNzt9Cgkuc3QzMHtmaWxsOiNGRkZGRkQ7fQoJLnN0MzF7ZmlsbDojRTBEQUJGO30KCS5zdDMye2ZpbGw6I0FGQTM3NDt9Cgkuc3QzM3tmaWxsOiM5MThFODA7fQoJLnN0MzR7ZmlsbDojRkZCMDAwO30KCS5zdDM1e2ZpbGw6IzU0NTM0RDt9Cgkuc3QzNntmaWxsOiNCMkE4N0Y7fQoJLnN0Mzd7ZmlsbDojNTE0RjQ3O30KCS5zdDM4e2ZpbGw6I0JDQjM4RTt9Cgkuc3QzOXtmaWxsOiM3Rjc2NEY7c3Ryb2tlOiMwMDAwMDA7c3Ryb2tlLXdpZHRoOjM7c3Ryb2tlLWxpbmVjYXA6cm91bmQ7c3Ryb2tlLWxpbmVqb2luOnJvdW5kO3N0cm9rZS1taXRlcmxpbWl0OjEwO30KCS5zdDQwe2ZpbGw6IzdGNzY0RjtzdHJva2U6IzUxNEMzNztzdHJva2Utd2lkdGg6MztzdHJva2UtbGluZWNhcDpyb3VuZDtzdHJva2UtbGluZWpvaW46cm91bmQ7c3Ryb2tlLW1pdGVybGltaXQ6MTA7fQoJLnN0NDF7ZmlsbDojNTE0RjQ3O3N0cm9rZTojMDAwMDAwO3N0cm9rZS13aWR0aDozO3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2UtbWl0ZXJsaW1pdDoxMDt9Cjwvc3R5bGU+CjxnPgoJPHBvbHlsaW5lIGNsYXNzPSJzdDE1IiBwb2ludHM9IjcsMjE4IDcsNzcgMTE4LDE2IDIyOSw3NyAyMjksMjE4IAkiLz4KCTxwb2x5Z29uIGNsYXNzPSJzdDE2IiBwb2ludHM9IjIyOSwyMTggMTE4LDE1NyA3LDIxOCAxMTgsMjc4IAkiLz4KCTxnPgoJCTxwb2x5bGluZSBjbGFzcz0ic3QyMCIgcG9pbnRzPSI5NS41LDE1MSA5NS41LDIwMy4yIDEwMi41LDIwNyAxMDkuNSwyMDMuMiAxMDkuNSwxNTcgCQkiLz4KCQk8cG9seWdvbiBjbGFzcz0ic3QyMCIgcG9pbnRzPSIyMTAuNSwyMTEuMyAxNTkuMiwyMzguMyAxMzEuNSwyMjQgMTMxLjUsMTcwIDkyLjUsMTQ4IDkyLjUsMTM5IDE5OS41LDE0MCAyMTAuNSwxNTMgMjEwLjUsMjAxIAkJCgkJCSIvPgoJCTxwYXRoIGNsYXNzPSJzdDIwIiBkPSJNODkuNSwxMzdsNzQsNDBsNTEtMjd2LTZsLTc0LTQxbC01MSwyOEM4OS41LDEzMSw4OC41LDEzNyw4OS41LDEzN3oiLz4KCQk8bGluZSBjbGFzcz0ic3QxIiB4MT0iMTU4LjUiIHkxPSIxNzUiIHgyPSIxNTguNSIgeTI9IjIzOCIvPgoJCTxsaW5lIGNsYXNzPSJzdDIwIiB4MT0iMTAyLjUiIHkxPSIyMDciIHgyPSIxMDIuNSIgeTI9IjE1NSIvPgoJPC9nPgoJPGxpbmUgY2xhc3M9InN0MTciIHgxPSIxMTgiIHkxPSIxNyIgeDI9IjExOCIgeTI9IjE1NyIvPgoJPHBhdGggY2xhc3M9InN0MjQiIGQ9Ik0xMzYuNSwxOTBsMTcsOWMwLDAuMywwLTE1LDAtMTVsLTE3LTlDMTM2LjUsMTc1LDEzNi41LDE5MSwxMzYuNSwxOTB6Ii8+Cgk8cGF0aCBjbGFzcz0ic3QyNCIgZD0iTTEzNi41LDIxM2wxNyw5YzAsMC4zLDAtMTUsMC0xNWwtMTctOUMxMzYuNSwxOTgsMTM2LjUsMjE0LDEzNi41LDIxM3oiLz4KCTxnPgoJCTxnPgoJCQk8bGluZSBjbGFzcz0ic3QxOSIgeDE9IjQwIiB5MT0iMTcxIiB4Mj0iNDQiIHkyPSIxODYiLz4KCQkJPGxpbmUgY2xhc3M9InN0MTkiIHgxPSI2MyIgeTE9IjE1OSIgeDI9IjY2IiB5Mj0iMTczIi8+CgkJCTxwb2x5bGluZSBjbGFzcz0ic3QyNSIgcG9pbnRzPSIxMDguNSwyMjAgMTA4LjUsMTY1IDc4LjUsMTQ5IDY2LjIsMTk2IAkJCSIvPgoJCQk8cGF0aCBjbGFzcz0ic3QxOSIgZD0iTTM2LjUsMTkwLjJMNzUsMjExbDM4LjUtMjAuOGMwLDAuMiwwLTUsMC01TDc1LDE2NGwtMzguNSwyMS4ydjQuOCIvPgoJCQk8cG9seWdvbiBjbGFzcz0ic3QxOSIgcG9pbnRzPSI1OS41LDExMCAyMSwxMzEuMiAzMi4zLDE3NSAzNi41LDE3NyA3NSwxNTYuMiA2My43LDExMiAJCQkiLz4KCQkJPHBhdGggY2xhc3M9InN0MjMiIGQ9Ik00Ny41LDE4MC4xbDI4LDE1LjJsMjgtMTUuMmMwLDAuMSwwLTI5LjEsMC0yOS4xbC0yOC0xNS41bC0yOCwxNS41djI5Ii8+CgkJCTxwYXRoIGNsYXNzPSJzdDIzIiBkPSJNNTMuNSwxNDcuMmwyMiwxMS43bDIyLTExLjdjMCwwLjEsMC0yMi4zLDAtMjIuM2wtMjItMTEuOWwtMjIsMTEuOVYxNDciLz4KCQkJPHBvbHlsaW5lIGNsYXNzPSJzdDI1IiBwb2ludHM9IjcxLjUsMjQxIDcxLjUsMTg2IDQxLjUsMTcwIDI5LjIsMjE3IAkJCSIvPgoJCTwvZz4KCQk8cG9seWxpbmUgY2xhc3M9InN0MjMiIHBvaW50cz0iNTUuNCwxMjQuOSA3NC41LDEzNSA3NC41LDE1NyAJCSIvPgoJCTxsaW5lIGNsYXNzPSJzdDEiIHgxPSI3NCIgeTE9IjEzNSIgeDI9Ijk1IiB5Mj0iMTI1Ii8+CgkJPHBvbHlsaW5lIGNsYXNzPSJzdDEiIHBvaW50cz0iNDguOCwxNTIgNzUuNSwxNjYgNzUuNSwxOTQgCQkiLz4KCQk8bGluZSBjbGFzcz0ic3QxIiB4MT0iNzUuNSIgeTE9IjE2NiIgeDI9IjkxIiB5Mj0iMTU4Ii8+Cgk8L2c+Cgk8cG9seWxpbmUgY2xhc3M9InN0MjAiIHBvaW50cz0iMjE1LDE0NCAxNjQsMTcwIDE0MywxNTggCSIvPgoJPGc+CgkJPGVsbGlwc2UgY2xhc3M9InN0MyIgY3g9IjExNi44IiBjeT0iMjQ1LjUiIHJ4PSIyNS44IiByeT0iMTYuNSIvPgoJCTxlbGxpcHNlIGNsYXNzPSJzdDMiIGN4PSIxMTYuOCIgY3k9IjI0MS41IiByeD0iMjUuOCIgcnk9IjE2LjUiLz4KCQk8bGluZSBjbGFzcz0ic3QxIiB4MT0iMTE2LjUiIHkxPSIxNjYiIHgyPSIxMTYuNSIgeTI9IjI0MCIvPgoJCTxwYXRoIGNsYXNzPSJzdDE5IiBkPSJNOTUuNywxMjAuNWwtNC43LDM1YzAsOS4xLDExLjUsMTYuNSwyNS44LDE2LjVzMjUuOC03LjQsMjUuOC0xNi41bC00LjctMzUiLz4KCQk8ZWxsaXBzZSBjbGFzcz0ic3QxOSIgY3g9IjExNi44IiBjeT0iMTIwLjUiIHJ4PSIyMS4xIiByeT0iMTMuNSIvPgoJPC9nPgo8L2c+Cjwvc3ZnPgo="
+                                                        class="ph-image unit-icon">
+                                                </span>
+                                                <span>
+                                                    <p class="mt-3">5′ x 5′</p>
+                                                </span>
+                                            </span>
+                                        </button>
+                                    </li>
+                                    <li class="item-filtro">
+                                        <button class="w-100 btn btn-medidas border border-grey" type="button">
+                                            <span class="d-inline-flex align-center">
+                                                <span class="icon">
+                                                    <img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDIxLjAuMiwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IgoJIHZpZXdCb3g9IjAgMCAzNDcgMzQyIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAzNDcgMzQyOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+CjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+Cgkuc3Qwe2ZpbGw6I0ZGQ0MwMDt9Cgkuc3Qxe2ZpbGw6bm9uZTtzdHJva2U6IzAwMDAwMDtzdHJva2Utd2lkdGg6MztzdHJva2UtbGluZWNhcDpyb3VuZDtzdHJva2UtbGluZWpvaW46cm91bmQ7c3Ryb2tlLW1pdGVybGltaXQ6MTA7fQoJLnN0MntmaWxsOiNGRkZGRkY7c3Ryb2tlOiMwMDAwMDA7c3Ryb2tlLXdpZHRoOjI7c3Ryb2tlLWxpbmVjYXA6cm91bmQ7c3Ryb2tlLWxpbmVqb2luOnJvdW5kO3N0cm9rZS1taXRlcmxpbWl0OjEwO30KCS5zdDN7ZmlsbDojRkZGRkZGO3N0cm9rZTojMDAwMDAwO3N0cm9rZS13aWR0aDozO3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2UtbWl0ZXJsaW1pdDoxMDt9Cgkuc3Q0e2ZpbGw6bm9uZTtzdHJva2U6IzAwMDAwMDtzdHJva2Utd2lkdGg6MztzdHJva2UtbGluZWNhcDpyb3VuZDtzdHJva2UtbWl0ZXJsaW1pdDoxMDt9Cgkuc3Q1e2ZpbGw6bm9uZTtzdHJva2U6IzAwMDAwMDtzdHJva2Utd2lkdGg6MjtzdHJva2UtbGluZWNhcDpyb3VuZDtzdHJva2UtbGluZWpvaW46cm91bmQ7c3Ryb2tlLW1pdGVybGltaXQ6MTA7fQoJLnN0NntmaWxsOm5vbmU7c3Ryb2tlOiMwMDAwMDA7c3Ryb2tlLXdpZHRoOjI7c3Ryb2tlLW1pdGVybGltaXQ6MTA7fQoJLnN0N3tmaWxsOm5vbmU7c3Ryb2tlOiMwMDAwMDA7c3Ryb2tlLXdpZHRoOjM7c3Ryb2tlLWxpbmVqb2luOnJvdW5kO3N0cm9rZS1taXRlcmxpbWl0OjEwO30KCS5zdDh7ZmlsbDojRkZGRkZGO30KCS5zdDl7ZmlsbDpub25lO3N0cm9rZTojMDAwMDAwO3N0cm9rZS13aWR0aDoyO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2UtbWl0ZXJsaW1pdDoxMDt9Cgkuc3QxMHtmaWxsOiNGQ0ZDRkM7c3Ryb2tlOiMwMDAwMDA7c3Ryb2tlLXdpZHRoOjI7c3Ryb2tlLWxpbmVjYXA6cm91bmQ7c3Ryb2tlLWxpbmVqb2luOnJvdW5kO3N0cm9rZS1taXRlcmxpbWl0OjEwO30KCS5zdDExe2ZpbGw6bm9uZTtzdHJva2U6IzAwMDAwMDtzdHJva2Utd2lkdGg6Mi42NjA3O3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1taXRlcmxpbWl0OjEwO30KCS5zdDEye2ZpbGw6I0ZGQ0QwNTtzdHJva2U6IzAwMDAwMDtzdHJva2Utd2lkdGg6Mi42NjA3O3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1taXRlcmxpbWl0OjEwO30KCS5zdDEze2ZpbGw6I0ZGRkZGRjtzdHJva2U6IzAwMDAwMDtzdHJva2Utd2lkdGg6Mi42NjA3O3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1taXRlcmxpbWl0OjEwO30KCS5zdDE0e2ZpbGw6bm9uZTtzdHJva2U6IzAwMDAwMDtzdHJva2Utd2lkdGg6Mi41Mzg1O3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2UtbWl0ZXJsaW1pdDoxMDt9Cgkuc3QxNXtmaWxsOiNCMkIyQjI7c3Ryb2tlOiM3QzdDN0M7c3Ryb2tlLXdpZHRoOjI7c3Ryb2tlLWxpbmVjYXA6cm91bmQ7c3Ryb2tlLWxpbmVqb2luOnJvdW5kO3N0cm9rZS1taXRlcmxpbWl0OjEwO30KCS5zdDE2e2ZpbGw6I0Y3RjdGNztzdHJva2U6IzdDN0M3QztzdHJva2Utd2lkdGg6MjtzdHJva2UtbGluZWNhcDpyb3VuZDtzdHJva2UtbGluZWpvaW46cm91bmQ7c3Ryb2tlLW1pdGVybGltaXQ6MTA7fQoJLnN0MTd7ZmlsbDpub25lO3N0cm9rZTojN0M3QzdDO3N0cm9rZS13aWR0aDoyO3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2UtbWl0ZXJsaW1pdDoxMDt9Cgkuc3QxOHtmaWxsOiNGRkZGRkQ7c3Ryb2tlOiMwMDAwMDA7c3Ryb2tlLXdpZHRoOjM7c3Ryb2tlLWxpbmVjYXA6cm91bmQ7c3Ryb2tlLWxpbmVqb2luOnJvdW5kO3N0cm9rZS1taXRlcmxpbWl0OjEwO30KCS5zdDE5e2ZpbGw6I0ZGQ0MwMDtzdHJva2U6IzAwMDAwMDtzdHJva2Utd2lkdGg6MztzdHJva2UtbGluZWNhcDpyb3VuZDtzdHJva2UtbGluZWpvaW46cm91bmQ7c3Ryb2tlLW1pdGVybGltaXQ6MTA7fQoJLnN0MjB7ZmlsbDojOTE4RTgwO3N0cm9rZTojMDAwMDAwO3N0cm9rZS13aWR0aDozO3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2UtbWl0ZXJsaW1pdDoxMDt9Cgkuc3QyMXtmaWxsOiNCQ0IzOEU7c3Ryb2tlOiMwMDAwMDA7c3Ryb2tlLXdpZHRoOjM7c3Ryb2tlLWxpbmVjYXA6cm91bmQ7c3Ryb2tlLWxpbmVqb2luOnJvdW5kO3N0cm9rZS1taXRlcmxpbWl0OjEwO30KCS5zdDIye2ZpbGw6I0JDQjM4RTtzdHJva2U6Izc3NzI1RjtzdHJva2Utd2lkdGg6MztzdHJva2UtbGluZWNhcDpyb3VuZDtzdHJva2UtbGluZWpvaW46cm91bmQ7c3Ryb2tlLW1pdGVybGltaXQ6MTA7fQoJLnN0MjN7ZmlsbDojRTBEQUJGO3N0cm9rZTojMDAwMDAwO3N0cm9rZS13aWR0aDozO3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2UtbWl0ZXJsaW1pdDoxMDt9Cgkuc3QyNHtmaWxsOiM5MThFODA7c3Ryb2tlOiM1NDUzNEQ7c3Ryb2tlLXdpZHRoOjM7c3Ryb2tlLWxpbmVjYXA6cm91bmQ7c3Ryb2tlLWxpbmVqb2luOnJvdW5kO3N0cm9rZS1taXRlcmxpbWl0OjEwO30KCS5zdDI1e2ZpbGw6bm9uZTtzdHJva2U6IzAwMDAwMDtzdHJva2Utd2lkdGg6NTtzdHJva2UtbGluZWNhcDpyb3VuZDtzdHJva2UtbGluZWpvaW46cm91bmQ7c3Ryb2tlLW1pdGVybGltaXQ6MTA7fQoJLnN0MjZ7ZmlsbDojQjJBODdGO3N0cm9rZTojMDAwMDAwO3N0cm9rZS13aWR0aDozO3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2UtbWl0ZXJsaW1pdDoxMDt9Cgkuc3QyN3tmaWxsOiNCMkIyQjI7fQoJLnN0Mjh7ZmlsbDojN0M3QzdDO30KCS5zdDI5e2ZpbGw6I0Y3RjdGNzt9Cgkuc3QzMHtmaWxsOiNGRkZGRkQ7fQoJLnN0MzF7ZmlsbDojRTBEQUJGO30KCS5zdDMye2ZpbGw6I0FGQTM3NDt9Cgkuc3QzM3tmaWxsOiM5MThFODA7fQoJLnN0MzR7ZmlsbDojRkZCMDAwO30KCS5zdDM1e2ZpbGw6IzU0NTM0RDt9Cgkuc3QzNntmaWxsOiNCMkE4N0Y7fQoJLnN0Mzd7ZmlsbDojNTE0RjQ3O30KCS5zdDM4e2ZpbGw6I0JDQjM4RTt9Cgkuc3QzOXtmaWxsOiM3Rjc2NEY7c3Ryb2tlOiMwMDAwMDA7c3Ryb2tlLXdpZHRoOjM7c3Ryb2tlLWxpbmVjYXA6cm91bmQ7c3Ryb2tlLWxpbmVqb2luOnJvdW5kO3N0cm9rZS1taXRlcmxpbWl0OjEwO30KCS5zdDQwe2ZpbGw6IzdGNzY0RjtzdHJva2U6IzUxNEMzNztzdHJva2Utd2lkdGg6MztzdHJva2UtbGluZWNhcDpyb3VuZDtzdHJva2UtbGluZWpvaW46cm91bmQ7c3Ryb2tlLW1pdGVybGltaXQ6MTA7fQoJLnN0NDF7ZmlsbDojNTE0RjQ3O3N0cm9rZTojMDAwMDAwO3N0cm9rZS13aWR0aDozO3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2UtbWl0ZXJsaW1pdDoxMDt9Cjwvc3R5bGU+CjxnPgoJPHBvbHlsaW5lIGNsYXNzPSJzdDE1IiBwb2ludHM9IjksMjc3IDksMTM2IDIzMSwxMiAzNDIsNzMgMzQyLDIxNCAJIi8+Cgk8cG9seWdvbiBjbGFzcz0ic3QxNiIgcG9pbnRzPSIzNDEuNywyMTQuNSAyMzAuNywxNTMuNSA5LDI3NyAxMjAsMzM3IAkiLz4KCTxsaW5lIGNsYXNzPSJzdDE3IiB4MT0iMjMxIiB5MT0iMTMiIHgyPSIyMzEiIHkyPSIxNTQiLz4KCTxwYXRoIGNsYXNzPSJzdDE4IiBkPSJNMTY3LjUsMTk3bDczLjgsNDBsNjcuMi0zNlY3MGwtNzMuOC00MWwtNjcuMiwzN0MxNjcuNSw2NiwxNjguNSwxOTcsMTY3LjUsMTk3eiIvPgoJPHBvbHlsaW5lIGNsYXNzPSJzdDEiIHBvaW50cz0iMTY3LjcsNjYgMjQxLjcsMTA2IDMwOSw3MCAJIi8+Cgk8bGluZSBjbGFzcz0ic3QxIiB4MT0iMTY5IiB5MT0iMTI3IiB4Mj0iMjQxLjciIHkyPSIxNjYiLz4KCTxsaW5lIGNsYXNzPSJzdDEiIHgxPSIxNzciIHkxPSI2MiIgeDI9IjI1MCIgeTI9IjEwMSIvPgoJPGxpbmUgY2xhc3M9InN0MSIgeDE9IjI0MS41IiB5MT0iMTA2IiB4Mj0iMjQxLjUiIHkyPSIyMzYiLz4KCTxsaW5lIGNsYXNzPSJzdDEiIHgxPSIyNDkuNSIgeTE9IjEwMiIgeDI9IjI0OS41IiB5Mj0iMjMyIi8+Cgk8bGluZSBjbGFzcz0ic3QxIiB4MT0iMjQxLjciIHkxPSIxNjYiIHgyPSIyNDkiIHkyPSIxNjIiLz4KCTxnPgoJCTxlbGxpcHNlIGNsYXNzPSJzdDMiIGN4PSIyMTkuOCIgY3k9IjI1Mi41IiByeD0iMjUuOCIgcnk9IjE2LjUiLz4KCQk8ZWxsaXBzZSBjbGFzcz0ic3QzIiBjeD0iMjE5LjgiIGN5PSIyNDguNSIgcng9IjI1LjgiIHJ5PSIxNi41Ii8+CgkJPGxpbmUgY2xhc3M9InN0MSIgeDE9IjIxOS41IiB5MT0iMTczIiB4Mj0iMjE5LjUiIHkyPSIyNDciLz4KCQk8cGF0aCBjbGFzcz0ic3QxOSIgZD0iTTE5OC43LDEyNy41bC00LjcsMzVjMCw5LjEsMTEuNSwxNi41LDI1LjgsMTYuNXMyNS44LTcuNCwyNS44LTE2LjVsLTQuNy0zNSIvPgoJCTxlbGxpcHNlIGNsYXNzPSJzdDE5IiBjeD0iMjE5LjgiIGN5PSIxMjcuNSIgcng9IjIxLjEiIHJ5PSIxMy41Ii8+Cgk8L2c+Cgk8cGF0aCBjbGFzcz0ic3QyMCIgZD0iTTE0OC41LDI0MS4zTDU0LjEsMjk0bC0zNS42LTE5VjE0Nmw5NC40LTUzLjdsMzUuNiwyMEMxNDguNSwxMTIuMywxNDguNSwyNDIuNywxNDguNSwyNDEuM3oiLz4KCTxnPgoJCTxwYXRoIGNsYXNzPSJzdDIxIiBkPSJNMjE0LjUsMjc2LjNMMTIwLjEsMzI5bC01OS43LTMyYy0xLjMsMS4zLDAtNTQsMC01NGw5NC40LTUzLjdsNTkuNywzM0MyMTQuNSwyMjIuMywyMTQuNSwyNzcuNywyMTQuNSwyNzYuMwoJCQl6Ii8+CgkJPHBvbHlsaW5lIGNsYXNzPSJzdDIxIiBwb2ludHM9IjEyMC41LDMyNyAxMjAuNSwyNzQgNjAuMywyNDMuNyAJCSIvPgoJCTxsaW5lIGNsYXNzPSJzdDIwIiB4MT0iMTIxIiB5MT0iMjczIiB4Mj0iMjEzLjMiIHkyPSIyMjIiLz4KCQk8cG9seWdvbiBjbGFzcz0ic3QyMiIgcG9pbnRzPSIxMjYuNSwyOTQgMTczLjUsMjY4IDE3My41LDI1MSAxMjYuNSwyNzcgCQkiLz4KCQk8cG9seWdvbiBjbGFzcz0ic3QyMiIgcG9pbnRzPSIxNzkuNSwyODkgMjA5LjUsMjcyIDIwOS41LDIzMSAxNzkuNSwyNDggCQkiLz4KCQk8cG9seWdvbiBjbGFzcz0ic3QyMiIgcG9pbnRzPSIxMjYuNSwzMTggMTczLjUsMjkyIDE3My41LDI3NSAxMjYuNSwzMDEgCQkiLz4KCTwvZz4KCTxwb2x5bGluZSBjbGFzcz0ic3QxIiBwb2ludHM9IjUzLjUsMjkzIDUzLjUsMTY0IDE0OC4xLDExMi4zIAkiLz4KCTxwb2x5bGluZSBjbGFzcz0ic3QxIiBwb2ludHM9IjYxLjUsMjQyIDYxLjUsMTcwIDE0MS41LDEyNiAxNDEuNSwxOTYgCSIvPgoJPGxpbmUgY2xhc3M9InN0MSIgeDE9IjU0IiB5MT0iMTY0IiB4Mj0iMTguNyIgeTI9IjE0NiIvPgoJPGxpbmUgY2xhc3M9InN0MSIgeDE9IjYyLjQiIHkxPSIyMDAuNyIgeDI9IjE0MiIgeTI9IjE1NyIvPgoJPGxpbmUgY2xhc3M9InN0MSIgeDE9IjYyLjQiIHkxPSIyMDYuNyIgeDI9IjE0MiIgeTI9IjE2MyIvPgoJPGxpbmUgY2xhc3M9InN0MSIgeDE9IjE0MSIgeTE9IjE1NyIgeDI9IjExNSIgeTI9IjE0MiIvPgoJPGxpbmUgY2xhc3M9InN0MSIgeDE9IjYyLjQiIHkxPSIyMjUuNyIgeDI9IjE0MiIgeTI9IjE4MiIvPgoJPGxpbmUgY2xhc3M9InN0MSIgeDE9IjYyLjQiIHkxPSIyMzEuNyIgeDI9IjE0MiIgeTI9IjE4OCIvPgoJPGxpbmUgY2xhc3M9InN0MSIgeDE9IjE0MSIgeTE9IjE4MiIgeDI9IjEyNSIgeTI9IjE3MyIvPgoJPGxpbmUgY2xhc3M9InN0MSIgeDE9IjE3My41IiB5MT0iMTAwIiB4Mj0iMTczLjUiIHkyPSIxMjIiLz4KCTxsaW5lIGNsYXNzPSJzdDEiIHgxPSIxNzMuNSIgeTE9IjE3OSIgeDI9IjE3My41IiB5Mj0iMTM3Ii8+CjwvZz4KPC9zdmc+Cg=="
+                                                        class="ph-image unit-icon">
+                                                </span>
+                                                <span>
+                                                    <p class="mt-3">5′ x 10′</p>
+                                                </span>
+                                            </span>
+                                        </button>
+                                    </li>
+                                    <li class="item-filtro">
+                                        <button class="w-100 btn btn-medidas border border-grey" type="button">
+                                            <span class="d-inline-flex align-center">
+                                                <span class="icon">
+                                                    <img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDIxLjAuMiwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IgoJIHZpZXdCb3g9IjAgMCA0NjAgNDExIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA0NjAgNDExOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+CjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+Cgkuc3Qwe2ZpbGw6I0ZGQ0MwMDt9Cgkuc3Qxe2ZpbGw6bm9uZTtzdHJva2U6IzAwMDAwMDtzdHJva2Utd2lkdGg6MztzdHJva2UtbGluZWNhcDpyb3VuZDtzdHJva2UtbGluZWpvaW46cm91bmQ7c3Ryb2tlLW1pdGVybGltaXQ6MTA7fQoJLnN0MntmaWxsOiNGRkZGRkY7c3Ryb2tlOiMwMDAwMDA7c3Ryb2tlLXdpZHRoOjI7c3Ryb2tlLWxpbmVjYXA6cm91bmQ7c3Ryb2tlLWxpbmVqb2luOnJvdW5kO3N0cm9rZS1taXRlcmxpbWl0OjEwO30KCS5zdDN7ZmlsbDojRkZGRkZGO3N0cm9rZTojMDAwMDAwO3N0cm9rZS13aWR0aDozO3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2UtbWl0ZXJsaW1pdDoxMDt9Cgkuc3Q0e2ZpbGw6bm9uZTtzdHJva2U6IzAwMDAwMDtzdHJva2Utd2lkdGg6MztzdHJva2UtbGluZWNhcDpyb3VuZDtzdHJva2UtbWl0ZXJsaW1pdDoxMDt9Cgkuc3Q1e2ZpbGw6bm9uZTtzdHJva2U6IzAwMDAwMDtzdHJva2Utd2lkdGg6MjtzdHJva2UtbGluZWNhcDpyb3VuZDtzdHJva2UtbGluZWpvaW46cm91bmQ7c3Ryb2tlLW1pdGVybGltaXQ6MTA7fQoJLnN0NntmaWxsOm5vbmU7c3Ryb2tlOiMwMDAwMDA7c3Ryb2tlLXdpZHRoOjI7c3Ryb2tlLW1pdGVybGltaXQ6MTA7fQoJLnN0N3tmaWxsOm5vbmU7c3Ryb2tlOiMwMDAwMDA7c3Ryb2tlLXdpZHRoOjM7c3Ryb2tlLWxpbmVqb2luOnJvdW5kO3N0cm9rZS1taXRlcmxpbWl0OjEwO30KCS5zdDh7ZmlsbDojRkZGRkZGO30KCS5zdDl7ZmlsbDpub25lO3N0cm9rZTojMDAwMDAwO3N0cm9rZS13aWR0aDoyO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2UtbWl0ZXJsaW1pdDoxMDt9Cgkuc3QxMHtmaWxsOiNGQ0ZDRkM7c3Ryb2tlOiMwMDAwMDA7c3Ryb2tlLXdpZHRoOjI7c3Ryb2tlLWxpbmVjYXA6cm91bmQ7c3Ryb2tlLWxpbmVqb2luOnJvdW5kO3N0cm9rZS1taXRlcmxpbWl0OjEwO30KCS5zdDExe2ZpbGw6bm9uZTtzdHJva2U6IzAwMDAwMDtzdHJva2Utd2lkdGg6Mi42NjA3O3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1taXRlcmxpbWl0OjEwO30KCS5zdDEye2ZpbGw6I0ZGQ0QwNTtzdHJva2U6IzAwMDAwMDtzdHJva2Utd2lkdGg6Mi42NjA3O3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1taXRlcmxpbWl0OjEwO30KCS5zdDEze2ZpbGw6I0ZGRkZGRjtzdHJva2U6IzAwMDAwMDtzdHJva2Utd2lkdGg6Mi42NjA3O3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1taXRlcmxpbWl0OjEwO30KCS5zdDE0e2ZpbGw6bm9uZTtzdHJva2U6IzAwMDAwMDtzdHJva2Utd2lkdGg6Mi41Mzg1O3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2UtbWl0ZXJsaW1pdDoxMDt9Cgkuc3QxNXtmaWxsOiNCMkIyQjI7c3Ryb2tlOiM3QzdDN0M7c3Ryb2tlLXdpZHRoOjI7c3Ryb2tlLWxpbmVjYXA6cm91bmQ7c3Ryb2tlLWxpbmVqb2luOnJvdW5kO3N0cm9rZS1taXRlcmxpbWl0OjEwO30KCS5zdDE2e2ZpbGw6I0Y3RjdGNztzdHJva2U6IzdDN0M3QztzdHJva2Utd2lkdGg6MjtzdHJva2UtbGluZWNhcDpyb3VuZDtzdHJva2UtbGluZWpvaW46cm91bmQ7c3Ryb2tlLW1pdGVybGltaXQ6MTA7fQoJLnN0MTd7ZmlsbDpub25lO3N0cm9rZTojN0M3QzdDO3N0cm9rZS13aWR0aDoyO3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2UtbWl0ZXJsaW1pdDoxMDt9Cgkuc3QxOHtmaWxsOiNGRkZGRkQ7c3Ryb2tlOiMwMDAwMDA7c3Ryb2tlLXdpZHRoOjM7c3Ryb2tlLWxpbmVjYXA6cm91bmQ7c3Ryb2tlLWxpbmVqb2luOnJvdW5kO3N0cm9rZS1taXRlcmxpbWl0OjEwO30KCS5zdDE5e2ZpbGw6I0ZGQ0MwMDtzdHJva2U6IzAwMDAwMDtzdHJva2Utd2lkdGg6MztzdHJva2UtbGluZWNhcDpyb3VuZDtzdHJva2UtbGluZWpvaW46cm91bmQ7c3Ryb2tlLW1pdGVybGltaXQ6MTA7fQoJLnN0MjB7ZmlsbDojOTE4RTgwO3N0cm9rZTojMDAwMDAwO3N0cm9rZS13aWR0aDozO3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2UtbWl0ZXJsaW1pdDoxMDt9Cgkuc3QyMXtmaWxsOiNCQ0IzOEU7c3Ryb2tlOiMwMDAwMDA7c3Ryb2tlLXdpZHRoOjM7c3Ryb2tlLWxpbmVjYXA6cm91bmQ7c3Ryb2tlLWxpbmVqb2luOnJvdW5kO3N0cm9rZS1taXRlcmxpbWl0OjEwO30KCS5zdDIye2ZpbGw6I0JDQjM4RTtzdHJva2U6Izc3NzI1RjtzdHJva2Utd2lkdGg6MztzdHJva2UtbGluZWNhcDpyb3VuZDtzdHJva2UtbGluZWpvaW46cm91bmQ7c3Ryb2tlLW1pdGVybGltaXQ6MTA7fQoJLnN0MjN7ZmlsbDojRTBEQUJGO3N0cm9rZTojMDAwMDAwO3N0cm9rZS13aWR0aDozO3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2UtbWl0ZXJsaW1pdDoxMDt9Cgkuc3QyNHtmaWxsOiM5MThFODA7c3Ryb2tlOiM1NDUzNEQ7c3Ryb2tlLXdpZHRoOjM7c3Ryb2tlLWxpbmVjYXA6cm91bmQ7c3Ryb2tlLWxpbmVqb2luOnJvdW5kO3N0cm9rZS1taXRlcmxpbWl0OjEwO30KCS5zdDI1e2ZpbGw6bm9uZTtzdHJva2U6IzAwMDAwMDtzdHJva2Utd2lkdGg6NTtzdHJva2UtbGluZWNhcDpyb3VuZDtzdHJva2UtbGluZWpvaW46cm91bmQ7c3Ryb2tlLW1pdGVybGltaXQ6MTA7fQoJLnN0MjZ7ZmlsbDojQjJBODdGO3N0cm9rZTojMDAwMDAwO3N0cm9rZS13aWR0aDozO3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2UtbWl0ZXJsaW1pdDoxMDt9Cgkuc3QyN3tmaWxsOiNCMkIyQjI7fQoJLnN0Mjh7ZmlsbDojN0M3QzdDO30KCS5zdDI5e2ZpbGw6I0Y3RjdGNzt9Cgkuc3QzMHtmaWxsOiNGRkZGRkQ7fQoJLnN0MzF7ZmlsbDojRTBEQUJGO30KCS5zdDMye2ZpbGw6I0FGQTM3NDt9Cgkuc3QzM3tmaWxsOiM5MThFODA7fQoJLnN0MzR7ZmlsbDojRkZCMDAwO30KCS5zdDM1e2ZpbGw6IzU0NTM0RDt9Cgkuc3QzNntmaWxsOiNCMkE4N0Y7fQoJLnN0Mzd7ZmlsbDojNTE0RjQ3O30KCS5zdDM4e2ZpbGw6I0JDQjM4RTt9Cgkuc3QzOXtmaWxsOiM3Rjc2NEY7c3Ryb2tlOiMwMDAwMDA7c3Ryb2tlLXdpZHRoOjM7c3Ryb2tlLWxpbmVjYXA6cm91bmQ7c3Ryb2tlLWxpbmVqb2luOnJvdW5kO3N0cm9rZS1taXRlcmxpbWl0OjEwO30KCS5zdDQwe2ZpbGw6IzdGNzY0RjtzdHJva2U6IzUxNEMzNztzdHJva2Utd2lkdGg6MztzdHJva2UtbGluZWNhcDpyb3VuZDtzdHJva2UtbGluZWpvaW46cm91bmQ7c3Ryb2tlLW1pdGVybGltaXQ6MTA7fQoJLnN0NDF7ZmlsbDojNTE0RjQ3O3N0cm9rZTojMDAwMDAwO3N0cm9rZS13aWR0aDozO3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2UtbWl0ZXJsaW1pdDoxMDt9Cjwvc3R5bGU+CjxnPgoJPHBvbHlsaW5lIGNsYXNzPSJzdDE1IiBwb2ludHM9IjksMzQxIDksMjAwIDM0MywxNSA0NTQsNzYgNDU0LDIxNyAJIi8+Cgk8cG9seWdvbiBjbGFzcz0ic3QxNiIgcG9pbnRzPSI0NTQsMjE4IDM0MywxNTcgOSwzNDEgMTIwLDQwMSAJIi8+Cgk8bGluZSBjbGFzcz0ic3QxNyIgeDE9IjM0MyIgeTE9IjE2IiB4Mj0iMzQzIiB5Mj0iMTU3Ii8+Cgk8cGF0aCBjbGFzcz0ic3QyNiIgZD0iTTE0OS41LDMwNS4zTDU1LjEsMzU4bC0zNS42LTE5VjIxMGw5NC40LTUzLjdsMzUuNiwyMEMxNDkuNSwxNzYuMywxNDkuNSwzMDYuNywxNDkuNSwzMDUuM3oiLz4KCTxwb2x5bGluZSBjbGFzcz0ic3QxIiBwb2ludHM9IjU0LjUsMzU3IDU0LjUsMjI4IDE0OS4xLDE3Ni4zIAkiLz4KCTxsaW5lIGNsYXNzPSJzdDEiIHgxPSI1NSIgeTE9IjIyOCIgeDI9IjE5LjciIHkyPSIyMTAiLz4KCTxsaW5lIGNsYXNzPSJzdDEiIHgxPSI2My40IiB5MT0iMjY0LjciIHgyPSIxNDMiIHkyPSIyMjEiLz4KCTxsaW5lIGNsYXNzPSJzdDEiIHgxPSI2My40IiB5MT0iMjcwLjciIHgyPSIxNDMiIHkyPSIyMjciLz4KCTxsaW5lIGNsYXNzPSJzdDEiIHgxPSIxNDIiIHkxPSIyMjEiIHgyPSIxMTYiIHkyPSIyMDYiLz4KCTxsaW5lIGNsYXNzPSJzdDEiIHgxPSI2My40IiB5MT0iMjg5LjciIHgyPSIxNDMiIHkyPSIyNDYiLz4KCTxsaW5lIGNsYXNzPSJzdDEiIHgxPSI2My40IiB5MT0iMjk1LjciIHgyPSIxNDMiIHkyPSIyNTIiLz4KCTxsaW5lIGNsYXNzPSJzdDEiIHgxPSIxNDIiIHkxPSIyNDYiIHgyPSIxMjYiIHkyPSIyMzciLz4KCTxnPgoJCTxlbGxpcHNlIGNsYXNzPSJzdDMiIGN4PSIzNDQuMiIgY3k9IjE4Ni41IiByeD0iMjUuOCIgcnk9IjE2LjUiLz4KCQk8ZWxsaXBzZSBjbGFzcz0ic3QzIiBjeD0iMzQ0LjIiIGN5PSIxODIuNSIgcng9IjI1LjgiIHJ5PSIxNi41Ii8+CgkJPGxpbmUgY2xhc3M9InN0MSIgeDE9IjM0NC41IiB5MT0iMTA3IiB4Mj0iMzQ0LjUiIHkyPSIxODEiLz4KCQk8cGF0aCBjbGFzcz0ic3QxOSIgZD0iTTMyMy4xLDYxLjVsLTQuNywzNWMwLDkuMSwxMS41LDE2LjUsMjUuOCwxNi41czI1LjgtNy40LDI1LjgtMTYuNWwtNC43LTM1Ii8+CgkJPGVsbGlwc2UgY2xhc3M9InN0MTkiIGN4PSIzNDQuMiIgY3k9IjYxLjUiIHJ4PSIyMS4xIiByeT0iMTMuNSIvPgoJPC9nPgoJPHBhdGggY2xhc3M9InN0MjEiIGQ9Ik00MDEsMjQwbDI4LjUtMTUuMmMwLDAuMSwwLTIzLjgsMC0zOS44YzAtOC42LTQuOS0xNi40LTEyLjUtMjAuM2wtNTAuNS0yNS44Yy03LjEtMy42LTE1LjctMy41LTIyLjcsMC4zCgkJbC0xNy4zLDkuNHY1Mi4xTDQwMSwyNDB6Ii8+Cgk8cGF0aCBjbGFzcz0ic3QyMSIgZD0iTTMzOS42LDE3NmwtNC41LTI0LjJjLTIuMy0xMi40LTExLjUtMjIuNy0yMy43LTI1LjhjLTMuNC0wLjktNi40LTEtOC4yLDBsLTc5LjUsNDAuOQoJCWMtNy42LDQuMy0xMS43LDEyLjgtMTAuNCwyMS40bDExLDQ2bDUuNS0zLjJsMS45LDcuOUwzMzkuNiwxNzZ6Ii8+Cgk8bGluZSBjbGFzcz0ic3QxIiB4MT0iNjMuNCIgeTE9IjMxNS43IiB4Mj0iMTQzIiB5Mj0iMjcyIi8+Cgk8Zz4KCQk8cGF0aCBjbGFzcz0ic3QyMSIgZD0iTTM5Ny41LDIzNy4zTDMwMy4xLDI5MGwtNTkuNy0zMmMtMS4zLDEuMywwLTMxLjMsMC0zMS4zbDk0LjQtNTMuN2w1OS43LDMzCgkJCUMzOTcuNSwyMDYsMzk3LjUsMjM4LjcsMzk3LjUsMjM3LjN6Ii8+CgkJPGxpbmUgY2xhc3M9InN0MjEiIHgxPSIyOTIiIHkxPSIxOTkiIHgyPSIzNDkuNyIgeTI9IjIzMSIvPgoJCTxwb2x5bGluZSBjbGFzcz0ic3QxIiBwb2ludHM9IjMwMy41LDI4OCAzMDMuNSwyNTcgMjQzLjMsMjI2LjcgCQkiLz4KCQk8bGluZSBjbGFzcz0ic3QyMCIgeDE9IjMwNCIgeTE9IjI1NyIgeDI9IjM5Ni4zIiB5Mj0iMjA2Ii8+CgkJPGxpbmUgY2xhc3M9InN0MjAiIHgxPSIzMDQiIHkxPSIyNjYiIHgyPSIzOTYuMyIgeTI9IjIxNSIvPgoJPC9nPgoJPGxpbmUgY2xhc3M9InN0MSIgeDE9IjYzLjQiIHkxPSIzMjEuNyIgeDI9IjE0MyIgeTI9IjI3OCIvPgoJPGxpbmUgY2xhc3M9InN0MSIgeDE9IjE0MiIgeTE9IjI3MiIgeDI9IjEyNiIgeTI9IjI2MyIvPgoJPHBhdGggY2xhc3M9InN0MjEiIGQ9Ik0yNzgsMzA3bDI4LjUtMTUuMmMwLDAuMSwwLTIzLjgsMC0zOS44YzAtOC42LTQuOS0xNi40LTEyLjUtMjAuM0wyNDEsMjA0LjVjLTUuNS0yLjgtMTIuNC0yLjctMTcuOCwwLjMKCQlsLTE5LjcsMTAuN3Y1Mi4xTDI3OCwzMDd6Ii8+Cgk8Zz4KCQk8Zz4KCQkJPHBvbHlsaW5lIGNsYXNzPSJzdDIwIiBwb2ludHM9IjE1MS41LDI1NCAxNTEuNSwzMDYuMiAxNTguNSwzMTAgMTY1LjUsMzA2LjIgMTY1LjUsMjYwIAkJCSIvPgoJCQk8cG9seWdvbiBjbGFzcz0ic3QyMCIgcG9pbnRzPSIyNjYuNSwzMTQuMyAyMTUuMiwzNDEuMyAxODcuNSwzMjcgMTg3LjUsMjczIDE0OC41LDI1MSAxNDguNSwyNDIgMjU1LjUsMjQzIDI2Ni41LDI1NiAyNjYuNSwzMDQgCgkJCQkJCQkiLz4KCQkJPHBhdGggY2xhc3M9InN0MjAiIGQ9Ik0xNDUuNSwyNDBsNzQsNDBsNTEtMjd2LTZsLTc0LTQxbC01MSwyOEMxNDUuNSwyMzQsMTQ0LjUsMjQwLDE0NS41LDI0MHoiLz4KCQkJPGxpbmUgY2xhc3M9InN0MSIgeDE9IjIxNC41IiB5MT0iMjc4IiB4Mj0iMjE0LjUiIHkyPSIzNDEiLz4KCQkJPGxpbmUgY2xhc3M9InN0MjAiIHgxPSIxNTguNSIgeTE9IjMxMCIgeDI9IjE1OC41IiB5Mj0iMjU4Ii8+CgkJPC9nPgoJCTxwYXRoIGNsYXNzPSJzdDI0IiBkPSJNMTkyLjUsMjkzbDE3LDljMCwwLjMsMC0xNSwwLTE1bC0xNy05QzE5Mi41LDI3OCwxOTIuNSwyOTQsMTkyLjUsMjkzeiIvPgoJCTxwYXRoIGNsYXNzPSJzdDI0IiBkPSJNMTkyLjUsMzE2bDE3LDljMCwwLjMsMC0xNSwwLTE1bC0xNy05QzE5Mi41LDMwMSwxOTIuNSwzMTcsMTkyLjUsMzE2eiIvPgoJCTxwb2x5bGluZSBjbGFzcz0ic3QyMCIgcG9pbnRzPSIyNzEsMjQ3IDIyMCwyNzMgMTQ2LDIzNCAJCSIvPgoJPC9nPgoJPHBvbHlnb24gY2xhc3M9InN0MSIgcG9pbnRzPSIxNDIuNSwyOTkgNjIuNSwzNDMgNjIuNSwyMzQgMTQyLjUsMTkwIAkiLz4KCTxnPgoJCTxnPgoJCQk8bGluZSBjbGFzcz0ic3QxOSIgeDE9IjEwNiIgeTE9IjMwNSIgeDI9IjExMCIgeTI9IjMyMCIvPgoJCQk8bGluZSBjbGFzcz0ic3QxOSIgeDE9IjEyOSIgeTE9IjI5MyIgeDI9IjEzMiIgeTI9IjMwNyIvPgoJCQk8cG9seWxpbmUgY2xhc3M9InN0MjUiIHBvaW50cz0iMTc0LjUsMzU0IDE3NC41LDI5OSAxNDQuNSwyODMgMTMyLjIsMzMwIAkJCSIvPgoJCQk8cGF0aCBjbGFzcz0ic3QxOSIgZD0iTTEwMi41LDMyNC4yTDE0MSwzNDVsMzguNS0yMC44YzAsMC4yLDAtNSwwLTVMMTQxLDI5OGwtMzguNSwyMS4ydjQuOCIvPgoJCQk8cG9seWdvbiBjbGFzcz0ic3QxOSIgcG9pbnRzPSIxMjUuNSwyNDQgODcsMjY1LjIgOTguMiwzMDkgMTAyLjUsMzExIDE0MSwyOTAuMiAxMjkuOCwyNDYgCQkJIi8+CgkJCTxwYXRoIGNsYXNzPSJzdDIzIiBkPSJNMTEzLjUsMzE0LjFsMjgsMTUuMmwyOC0xNS4yYzAsMC4xLDAtMjkuMSwwLTI5LjFsLTI4LTE1LjVsLTI4LDE1LjV2MjkiLz4KCQkJPHBhdGggY2xhc3M9InN0MjMiIGQ9Ik0xMTkuNSwyODEuMmwyMiwxMS43bDIyLTExLjdjMCwwLjEsMC0yMi4zLDAtMjIuM2wtMjItMTEuOWwtMjIsMTEuOVYyODEiLz4KCQkJPHBvbHlsaW5lIGNsYXNzPSJzdDI1IiBwb2ludHM9IjEzNy41LDM3NSAxMzcuNSwzMjAgMTA3LjUsMzA0IDk1LjIsMzUxIAkJCSIvPgoJCTwvZz4KCQk8cG9seWxpbmUgY2xhc3M9InN0MjMiIHBvaW50cz0iMTIxLjQsMjU4LjkgMTQwLjUsMjY5IDE0MC41LDI5MSAJCSIvPgoJCTxsaW5lIGNsYXNzPSJzdDEiIHgxPSIxNDAiIHkxPSIyNjkiIHgyPSIxNjEiIHkyPSIyNTkiLz4KCQk8cG9seWxpbmUgY2xhc3M9InN0MSIgcG9pbnRzPSIxMTQuOCwyODYgMTQxLjUsMzAwIDE0MS41LDMyOCAJCSIvPgoJCTxsaW5lIGNsYXNzPSJzdDEiIHgxPSIxNDEuNSIgeTE9IjMwMCIgeDI9IjE2OSIgeTI9IjI4NiIvPgoJPC9nPgoJPGxpbmUgY2xhc3M9InN0MSIgeDE9IjIxOS41IiB5MT0iMjczIiB4Mj0iMjE5LjUiIHkyPSIyNzgiLz4KCTxsaW5lIGNsYXNzPSJzdDIwIiB4MT0iMzUwLjUiIHkxPSIyNDAiIHgyPSIzNTAuNSIgeTI9IjIzMSIvPgo8L2c+Cjwvc3ZnPgo="
+                                                        class="ph-image unit-icon">
+                                                </span>
+                                                <span>
+                                                    <p class="mt-3">5′ x 15′</p>
+                                                </span>
+                                            </span>
+                                        </button>
+                                    </li>
+                                    <li class="item-filtro">
+                                        <button class="w-100 btn btn-medidas border border-grey" type="button">
+                                            <span class="d-inline-flex align-center">
+                                                <span class="icon">
+                                                    <img src="https://philes.sparefoot.com/assets/e9532f5a41d6210321ee9cc91eb4a74cc0af1192/images/unit-icons/10x10-storage.svg"
+                                                        class="ph-image unit-icon">
+                                                </span>
+                                                <span>
+                                                    <p class="mt-3">10′ x 10′</p>
+                                                </span>
+                                            </span>
+                                        </button>
+                                    </li>
+                                    <li class="item-filtro">
+                                        <button class="w-100 btn btn-medidas border border-grey" type="button">
+                                            <span class="d-inline-flex align-center">
+                                                <span class="icon">
+                                                    <img src="https://philes.sparefoot.com/assets/e9532f5a41d6210321ee9cc91eb4a74cc0af1192/images/unit-icons/10x15-storage.svg"
+                                                        class="ph-image unit-icon">
+                                                </span>
+                                                <span>
+                                                    <p class="mt-3">10′ x 15′</p>
+                                                </span>
+                                            </span>
+                                        </button>
+                                    </li>
+                                    <li class="item-filtro">
+                                        <button class="w-100 btn btn-medidas border border-grey" type="button">
+                                            <span class="d-inline-flex align-center">
+                                                <span class="icon">
+                                                    <img src="https://philes.sparefoot.com/assets/e9532f5a41d6210321ee9cc91eb4a74cc0af1192/images/unit-icons/10x20-storage.svg"
+                                                        class="ph-image unit-icon">
+                                                </span>
+                                                <span>
+                                                    <p class="mt-3">10′ x 20′</p>
+                                                </span>
+                                            </span>
+                                        </button>
+                                    </li>
+                                    <li class="item-filtro">
+                                        <button class="w-100 btn btn-medidas border border-grey" type="button">
+                                            <span class="d-inline-flex align-center">
+                                                <span class="icon">
+                                                    <img src="https://philes.sparefoot.com/assets/e9532f5a41d6210321ee9cc91eb4a74cc0af1192/images/unit-icons/10x30-storage.svg"
+                                                        class="ph-image unit-icon">
+                                                </span>
+                                                <span>
+                                                    <p class="mt-3">10′ x 30′</p>
+                                                </span>
+                                            </span>
+                                        </button>
+                                    </li>
+                                </ul>
+                                <div class="bg-white">
+                                    <button class="btn bg-orange white" type="button">
+                                        <span class="d-inline-flex text-center align-center">
+                                            <span>
+                                                Guia de Tamaños
+                                            </span>
+                                        </span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="mt-3" id="filtro-amenidades">
+                                <p class="sf-type sf-type-tiny sf-type-gray sf-type-eyebrow">Amenidades</p>
+                                <ul class="grupo-filtro">
+                                    <li class="checkbox-item">
+                                        <div class="custom-control custom-checkbox">
+                                            <input type="checkbox" class="custom-control-input" id="amenity-filter-0">
+                                            <label class="custom-control-label" for="amenity-filter-0">
+                                                Descuento
+                                            </label>
+                                        </div>
+                                    </li>
+                                    <li class="checkbox-item">
+                                        <div class="custom-control custom-checkbox">
+                                            <input type="checkbox" class="custom-control-input" id="amenity-filter-1">
+                                            <label class="custom-control-label" for="amenity-filter-1">
+                                                Clima controlado
+                                            </label>
+                                        </div>
+                                    </li>
+                                    <li class="checkbox-item">
+                                        <div class="custom-control custom-checkbox">
+                                            <input type="checkbox" class="custom-control-input" id="amenity-filter-2">
+                                            <label class="custom-control-label" for="amenity-filter-2">
+                                                Acceso 24 horas
+                                            </label>
+                                        </div>
+                                    </li>
+                                    <li class="checkbox-item">
+                                        <div class="custom-control custom-checkbox">
+                                            <input type="checkbox" class="custom-control-input" id="amenity-filter-3">
+                                            <label class="custom-control-label" for="amenity-filter-3">
+                                                Alarma
+                                            </label>
+                                        </div>
+                                    </li>
+                                    <li class="checkbox-item">
+                                        <div class="custom-control custom-checkbox">
+                                            <input type="checkbox" class="custom-control-input" id="amenity-filter-4">
+                                            <label class="custom-control-label" for="amenity-filter-4">
+                                                Vigilancia
+                                            </label>
+                                        </div>
+                                    </li>
+                                    <li class="checkbox-item">
+                                        <div class="custom-control custom-checkbox">
+                                            <input type="checkbox" class="custom-control-input" id="amenity-filter-5">
+                                            <label class="custom-control-label" for="amenity-filter-5">
+                                                Seguro 100UF
+                                            </label>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="col-sm-9">
-                    <div id="busqueda" class="text-center">
+                <div class="col-md-9">
+                    <div id="busqueda" class="text-center p-5 bg-grey">
                         <h3>Bodegas disponibles de Huechuraba, Santiago.</h3>
                         <h5 class="mb-3">Encuentra bodegas cerca tuyo.</h5>
-                        <form class="form-inline my-2 my-lg-0 row">
-                            <div class="col-sm-9 pl-3">
-                                <input class="form-control w-75 float-right" type="search" placeholder="Search"
+                        <form class="form-inline my-2 my-lg-0 row text-center">
+                            <div class="col-sm-2"></div>
+                            <div class="col-md-6 col-xs-12 pr-1 pl-0">
+                                <input class="form-control w-100" type="search" placeholder="Search"
                                     aria-label="Search">
                             </div>
-                            <div class="col-sm-2 pl-0">
-                                <button class="btn bg-orange black float-left my-2 my-sm-0"
-                                    type="submit">Search</button>
+                            <div class="col-md-2 col-xs-12 pl-0 pr-0">
+                                <a href="busqueda.html" class="btn btn-block bg-orange white my-2 my-sm-0">Search</a>
                             </div>
+                            <div class="col-sm-2"></div>
                         </form>
+                    </div>
+                    <div id="mapa-mobile" class="mt-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="515" height="175" viewBox="0 0 480 175"
+                            class="svg static-map">
+                            <g fill="none" fill-rule="evenodd">
+                                <path fill="#EAEAEA" fill-rule="nonzero" d="M-17.9-16.2h507.7v204.6H-17.9"></path>
+                                <path fill="#CBE6A3" fill-rule="nonzero"
+                                    d="M386.6 162l-39.4-24.2 41-58.7 23.6 1.2-25.2 81.7zm-183.5-36.8l-30.8-17.8 13.9-24 33.8 18.3-7.3 14.5-5.1 1.1-4.5 7.9zM47.2 22.3L59.4-1.3l3.7-2.1 23.3 14.8-3.6 7.8-23.1 2.9-4.7 5.4-7.8-5.2zM-4.7 173.8l18.2-32.1 16.1 8.8-20.5 31.9-13.8-8.6zM139.6 34.3l16.2 8.8 10-21.8-9.9-4.9-10.1 8.3-6.2 9.6zm169.3 142l-40.7-29.8-20.4 41.9 34.6-2.5 26.5-9.6z"
+                                    opacity=".5"></path>
+                                <path stroke="#CECECE" stroke-width="2.075"
+                                    d="M162.7 124.4l40.8 22.5m-7.8 16s9-18.3 10.6-20.1c1.4-1.6 4.2-4 8-1.9s18.9 10 18.9 10m-47.7-68.7l63.1 35.4m-28.7-15.9s-7.6 13.7-7.8 14.4c-.2.7-2.9 1-4.3 1.4-1.4.4-13.3 24.4-13.3 24.4m8-17.4l-30.8-17.1M24.7 122L-2 169.7">
+                                </path>
+                                <path stroke="#CECECE" stroke-width="2.075"
+                                    d="M12.5 177.6l47.4-81.3s2.4-6.9 10-6.9 23.5 8 25.9 8.6c2.4.6 32.9 25.6 32.9 25.6l40.5-77.8"
+                                    stroke-linecap="round"></path>
+                                <path stroke="#CECECE" stroke-width="2.075" d="M-3 97.4l22.5-39.8 26.6-35.3 18-32.1">
+                                </path>
+                                <path stroke="#CECECE" stroke-width="2.075"
+                                    d="M70 89.4s-5.9-51.5-7.6-55.3c-1.7-3.8-16.3-11.8-16.3-11.8"></path>
+                                <path stroke="#CECECE" stroke-width="2.075" d="M101.8 20.6L52-9.2M175.1 98.4l-66.4-36.3"
+                                    stroke-linecap="round"></path>
+                                <path stroke="#CECECE" stroke-width="2.075"
+                                    d="M104 101.7l33.2-62.3s6.7-16.1 10.9-16.6 15-15 20.8-31.1M4.4 85.1l45.7 27m168.6-41.5l9.9-16.1s13-6.2 9.9-15c-3.1-8.8-21.8-15.6-21.8-15.6m-6.3 9.8l-21.3-10.9s11.4-30.6 14.5-36.3M55.4 28.2s1-5.9 6.2-5.5c5.2.3 21.1-3.5 21.1-3.5s5.9-10.7 7.6-11.4c1.7-.7 13.8-6.2 13.8-6.2l6.9-12.5M62.7 91.5s-8.3-7.6-11.4-8c0 0 0-8 4.2-9.3 4.2-1.4 10.7-6.9 12.5-6.9 1.8 0 20-4.5 20-4.5s8.3-14.2-9-10.4c-17.3 3.8-21.8 4.2-21.8 4.2s-11.4 5.5-12.8 8C43 67 32.6 86.3 39.9 87c7.3.7 9.3 1.7 11.4-3.5M-8.6 11.6S16.3 22.3 18 24.7c1.7 2.4-5.5 13.8-6.6 14.2-1 .3-29.7-20.4-29.7-20.4">
+                                </path>
+                                <path stroke="#CECECE" stroke-width="2.075"
+                                    d="M-.3 43.8s10.7 3.8 11.1 7.3c.3 3.5-4.2 6.9-1 9.3 3.1 2.4 15.2 5.5 15.2 5.5l3.5 3.1m37.3 75.8l-23.2 41.8"
+                                    stroke-linecap="round"></path>
+                                <path stroke="#CECECE" stroke-width="2.075"
+                                    d="M72.7 162.4s-6.9 2.4-8.6 6.7l-49.3-27m41.3 46.3l8-19.2m47-48.3s4.2 20.4-24.2 65.7">
+                                </path>
+                                <path stroke="#CECECE" stroke-width="2.075"
+                                    d="M139.8 34.8l53.3 31.1M119.4-1.9l46.4 23.2-10 21.8 23.1-49.8m47.8 12.1l63.5 33.9m-67.3-25.6s18.3 10 19.7 11.1c1.4 1 10.4 14.5 3.8 27.7-6.6 13.2-7.7 12.4-9.7 13.8-3.5 2.4-10 .3-15.2-3.5-5.2-3.8-19.4-10.4-19.4-10.4m43.6 78.2l22.1 15.8 51 36.6m-51-36.6c.3 2.7-20.4 43.6-20.4 43.6m-140.1-43.5l73.4 41.2M120.5 55.2l7.3 5.9s5.9-.7 7.3-.3c1.4.4 9.7 6.2 9.7 6.2l6.6 1.7 3.5 1.4m115 9L253 69.7s5.9-13.1 5.9-14.5c0-1.4-1.4-28 .7-31.1"
+                                    stroke-linecap="round"></path>
+                                <path stroke="#CECECE" stroke-width="2.075" d="M-3.7 1.2L15 11.6l9.3-18.3"></path>
+                                <path stroke="#CECECE" stroke-width="2.075" d="M41.6 10.9L31.9 4l.4-12.5"
+                                    stroke-linecap="round"></path>
+                                <path fill="#CBE6A3" fill-rule="nonzero"
+                                    d="M351.2 44.7l2.8-26.5-1.9-3.7-27.7-.5-1.2 8.5 17.7 15.1.9 7.1" opacity=".5">
+                                </path>
+                                <path stroke="#CECECE" stroke-width="2.075" d="M351.3 143.2l3.7-53.8-2.9-44.1 2.7-36.8">
+                                </path>
+                                <path stroke="#CECECE" stroke-width="2.075"
+                                    d="M279.6 104.9s48.9-56.5 52.5-58.7c3.5-2.2 20-.9 20-.9"></path>
+                                <path stroke="#CECECE" stroke-width="2.075" d="M306.5 13.2l58 2.5"
+                                    stroke-linecap="round"></path>
+                                <path stroke="#CECECE" stroke-width="2.075"
+                                    d="M352.4 120.6l-53-2.5m41.7-73s2.4-5.5-2.2-8c-4.5-2.6-15.7-14.5-15.7-14.5s1-12.2-.1-13.7S315-4 315-4l1.1-14.2M288.6 94.3s22.7-2.1 25.5-.7c0 0 4.4-6.6 1.7-10.1s-5.2-11.7-6.6-12.6c-1.4-1-14.3-14.8-14.3-14.8s.9-16.4 13.2-3.7C320.4 65.1 324 67.8 324 67.8s6.5 10.9 6.3 13.7c-.2 2.8-2.2 24.7-8.6 21.3-6.4-3.4-8.8-3.7-7.6-9.2m186.4-31s-123.5-1-126.3.1c-2.8 1.1-3 14.6-2.3 15.5.7.9 118 4 118 4">
+                                </path>
+                                <path stroke="#CECECE" stroke-width="2.075"
+                                    d="M379 88.7s-11-2.7-13.2 0c-2.2 2.7-.3 8.1-4.3 8.4-3.9.3-15.8-3.7-15.8-3.7l-4.6.7"
+                                    stroke-linecap="round"></path>
+                                <path stroke="#CECECE" stroke-width="2.075" d="M489.8 55L384 53.4l4.3-38.7"></path>
+                                <path stroke="#CECECE" stroke-width="2.075" d="M353.4 38.5l20.6-.7 25.5-41.2"
+                                    stroke-linecap="round"></path>
+                                <path stroke="#FFF" stroke-width="5.189"
+                                    d="M129.1 183.9L238.8-16.8M-17.9 107.4s29.4 18 91.3 14.2c61.9-3.8 82.3 5.2 112.8 33.9s49.1 40.5 49.1 40.5m-22.8-4.2L318.8-16.8m-69 136.8l253.3 135.3M72 122.3l78.2-142.5">
+                                </path>
+                                <path stroke="#CECECE" stroke-width="2.234"
+                                    d="M411.8 80.3L386.6 162m25.2 13L437 80.3m.6 94.7l25.2-94.7"></path>
+                                <path stroke="#FFF" stroke-width="5.189" d="M196.9 60.7L450.2 196"></path>
+                                <path stroke="#CECECE" stroke-width="2.234" d="M399.2 119.4l90.6 8.9"></path>
+                                <path stroke="#FFF" stroke-width="5.189" d="M455.7-16.4L287.4 216.2"></path>
+                                <path stroke="#CECECE" stroke-width="2.075"
+                                    d="M462.8 0l-18.3 23.9s-7.2 14.9 2.8 15.4 22.5-4.5 22.5-4.5l13-15.2"></path>
+                            </g>
+                        </svg>
+                        <button class="btn btn-block bg-orange white">
+                            <b>Ver resultados en el mapa</b>
+                        </button>
+                    </div>
+                    <div id="settings-mobile" class="text-center mt-2">
+                        <button class="btn bg-orange white" id="btn-filtros-mobile"><i class="fas fa-sliders-h"></i>
+                            Filtros</button>
                     </div>
                     <div class="mt-3 mb-3">
                         1 - 15 de 223 bodegas cerca de Huechuraba, Santiago
                     </div>
-                    <div class="element mt-4 mb-4">
+                    <div class="element p-4 border-grey mt-4 mb-4">
                         <div class="row">
                             <div class="col-sm-4">
                                 <img src="https://source.unsplash.com/1000x500/?warehouse" class="img-responsive"
                                     alt="">
                             </div>
                             <div class="col-sm-8">
-                                <h3>Mini Bodega Super</h3>
-                                <h3>Rinconada El Salto 405, Huechuraba, Stgo</h3>
+                                <h4>Mini Bodega Super</h4>
+                                <h4>Rinconada El Salto 405, Huechuraba, Stgo</h4>
                                 <span>Huechuraba, Santiago 1 km de distancia</span>
                                 <div class="mt-3">
-                                    <h5>Mostrar Telefono</h5>
+                                    <h5 class="border-black link-border d-inline-block">Mostrar Telefono</h5>
                                 </div>
                                 <div>
                                     <ul class="medidas">
                                         <li>
                                             <div>
-                                                <h5 class="d-inline-block">10 m2</h5>
-                                                <i class="fas fa-chevron-right float-right ml-2"></i>
-                                                <h5 class="d-inline-block float-right">$75.000</h5>
+                                                <h6 class="d-inline-block border-bottom border-black">10 m2</h6>
+                                                <i class="fas fa-chevron-right float-right ml-2 cyan"></i>
+                                                <h6 class="d-inline-block float-right">$75.000</h6>
                                             </div>
                                         </li>
                                         <li>
                                             <div>
-                                                <h5 class="d-inline-block">15 m2</h5>
-                                                <i class="fas fa-chevron-right float-right ml-2"></i>
-                                                <h5 class="d-inline-block float-right">$120.000</h5>
+                                                <h6 class="d-inline-block border-bottom border-black">15 m2</h6>
+                                                <i class="fas fa-chevron-right float-right ml-2 cyan"></i>
+                                                <h6 class="d-inline-block float-right">$120.000</h6>
                                             </div>
                                         </li>
                                         <li>
                                             <div>
-                                                <h5 class="d-inline-block">20 m2</h5>
-                                                <i class="fas fa-chevron-right float-right ml-2"></i>
-                                                <h5 class="d-inline-block float-right">$150.000</h5>
+                                                <h6 class="d-inline-block border-bottom border-black">20 m2</h6>
+                                                <i class="fas fa-chevron-right float-right ml-2 cyan"></i>
+                                                <h6 class="d-inline-block float-right">$150.000</h6>
                                             </div>
                                         </li>
                                     </ul>
                                 </div>
+                                <a href="instalacion.html" class="btn float-right bg-orange white">Ver detalles</a>
                             </div>
                         </div>
                     </div>
-                    <div class="element mt-4 mb-4">
+                    <div class="element p-4 border-grey mt-4 mb-4">
                         <div class="row">
                             <div class="col-sm-4">
                                 <img src="https://source.unsplash.com/1600x900/?warehouse" class="img-responsive"
                                     alt="">
                             </div>
                             <div class="col-sm-8">
-                                <h3>ABC Bodegas Ltda.</h3>
-                                <h3>Rinconada El Salto 405, Huechuraba, Stgo.</h3>
+                                <h4>ABC Bodegas Ltda.</h4>
+                                <h4>Rinconada El Salto 405, Huechuraba, Stgo.</h4>
                                 <span>Huechuraba, Santiago 1 km de distancia</span>
                                 <div class="mt-3">
-                                    <h5>Mostrar Telefono</h5>
+                                    <h5 class="border-black link-border d-inline-block">Mostrar Telefono</h5>
                                 </div>
                                 <div>
                                     <ul class="medidas">
                                         <li>
                                             <div>
-                                                <h5 class="d-inline-block">10 m2</h5>
-                                                <i class="fas fa-chevron-right float-right ml-2"></i>
-                                                <h5 class="d-inline-block float-right">$75.000</h5>
+                                                <h6 class="d-inline-block border-bottom border-black">10 m2</h6>
+                                                <i class="fas fa-chevron-right float-right ml-2 cyan"></i>
+                                                <h6 class="d-inline-block float-right">$75.000</h6>
                                             </div>
                                         </li>
                                         <li>
                                             <div>
-                                                <h5 class="d-inline-block">15 m2</h5>
-                                                <i class="fas fa-chevron-right float-right ml-2"></i>
-                                                <h5 class="d-inline-block float-right">$120.000</h5>
+                                                <h6 class="d-inline-block border-bottom border-black">15 m2</h6>
+                                                <i class="fas fa-chevron-right float-right ml-2 cyan"></i>
+                                                <h6 class="d-inline-block float-right">$120.000</h6>
                                             </div>
                                         </li>
                                         <li>
                                             <div>
-                                                <h5 class="d-inline-block">20 m2</h5>
-                                                <i class="fas fa-chevron-right float-right ml-2"></i>
-                                                <h5 class="d-inline-block float-right">$150.000</h5>
+                                                <h6 class="d-inline-block border-bottom border-black">20 m2</h6>
+                                                <i class="fas fa-chevron-right float-right ml-2 cyan"></i>
+                                                <h6 class="d-inline-block float-right">$150.000</h6>
                                             </div>
                                         </li>
                                     </ul>
                                 </div>
+                                <button class="btn float-right bg-orange white">Ver detalles</button>
                             </div>
                         </div>
                     </div>
-                    <div class="element mt-4 mb-4">
+                    <div class="element p-4 border-grey mt-4 mb-4">
                         <div class="row">
                             <div class="col-sm-4">
                                 <img src="https://source.unsplash.com/1500x750/?warehouse" class="img-responsive"
                                     alt="">
                             </div>
                             <div class="col-sm-8">
-                                <h3>Bodegas MB</h3>
-                                <h3>Camino B 1345, Huechuraba, Stgo.</h3>
+                                <h4>Bodegas MB</h4>
+                                <h4>Camino B 1345, Huechuraba, Stgo.</h4>
                                 <span>Huechuraba, Santiago 1,1 km de distancia</span>
                                 <div class="mt-3">
-                                    <h5>Mostrar Telefono</h5>
+                                    <h5 class="border-black link-border d-inline-block">Mostrar Telefono</h5>
                                 </div>
                                 <div>
                                     <ul class="medidas">
                                         <li>
                                             <div>
-                                                <h5 class="d-inline-block">10 m2</h5>
-                                                <i class="fas fa-chevron-right float-right ml-2"></i>
-                                                <h5 class="d-inline-block float-right">$75.000</h5>
+                                                <h6 class="d-inline-block border-bottom border-black">10 m2</h6>
+                                                <i class="fas fa-chevron-right float-right ml-2 cyan"></i>
+                                                <h6 class="d-inline-block float-right">$75.000</h6>
                                             </div>
                                         </li>
                                         <li>
                                             <div>
-                                                <h5 class="d-inline-block">15 m2</h5>
-                                                <i class="fas fa-chevron-right float-right ml-2"></i>
-                                                <h5 class="d-inline-block float-right">$120.000</h5>
+                                                <h6 class="d-inline-block border-bottom border-black">15 m2</h6>
+                                                <i class="fas fa-chevron-right float-right ml-2 cyan"></i>
+                                                <h6 class="d-inline-block float-right">$120.000</h6>
                                             </div>
                                         </li>
                                         <li>
                                             <div>
-                                                <h5 class="d-inline-block">20 m2</h5>
-                                                <i class="fas fa-chevron-right float-right ml-2"></i>
-                                                <h5 class="d-inline-block float-right">$150.000</h5>
+                                                <h6 class="d-inline-block border-bottom border-black">20 m2</h6>
+                                                <i class="fas fa-chevron-right float-right ml-2 cyan"></i>
+                                                <h6 class="d-inline-block float-right">$150.000</h6>
                                             </div>
                                         </li>
                                     </ul>
                                 </div>
+                                <button class="btn float-right bg-orange white">Ver detalles</button>
                             </div>
                         </div>
                     </div>
@@ -308,6 +615,8 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"
         integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o"
         crossorigin="anonymous"></script>
+    <script src="index.js">
+    </script>
 </body>
 
 </html>

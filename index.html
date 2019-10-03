@@ -16,7 +16,7 @@
 <body>
     <header class="bg-orange">
         <nav class="navbar navbar-expand-lg bg-orange">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="index.html">
                 <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="191" height="50" version="1.1"
                     style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
                     viewBox="0 0 1000 261" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -114,8 +114,9 @@
                     </g>
                 </svg>
             </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse"
+                data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse black" id="navbarSupportedContent">
@@ -140,7 +141,7 @@
                 </div>
                 <div class="nav-item ml-3 mr-5">
                     <a class="nav-link" href="#">
-                        <b>Filetes</b>
+                        <b>Fletes</b>
                     </a>
                 </div>
             </div>
@@ -151,14 +152,15 @@
             <div class="container pt-5 pb-5 text-center" id="barra de busqueda">
                 <h1 class="mt-5 mb-2">Encuentra un hogar para tus cosas</h1>
                 <h3 class="mb-4">Encuentra la bodega que necesitas en solo minutos</h3>
-                <form class="form-inline my-2 my-lg-0 row">
-                    <div class="col-sm-9 pl-3">
-                        <input class="form-control w-75 float-right" type="search" placeholder="Search"
-                            aria-label="Search">
+                <form class="form-inline my-2 my-lg-0 row text-center">
+                    <div class="col-sm-2"></div>
+                    <div class="col-sm-6 col-xs-12 pr-1 pl-0">
+                        <input class="form-control w-100" type="text" placeholder="Search" aria-label="Search">
                     </div>
-                    <div class="col-sm-2 pl-0">
-                        <a href="busqueda.html" class="btn bg-black white float-left my-2 my-sm-0">Search</a>
+                    <div class="col-sm-2 col-xs-12 pl-0 pr-0">
+                        <a href="busqueda.html" class="btn btn-block bg-black white my-2 my-sm-0">Search</a>
                     </div>
+                    <div class="col-sm-2"></div>
                 </form>
                 <div class="mb-5"></div>
             </div>
@@ -166,32 +168,34 @@
     </section>
     <section id="caracteristicas" class="mt-5 mb-5 pt-4 bg-white">
         <div class="container-fluid text-center">
-            <div class="container pl-5 pr-5">
-                <div class="container pl-5 pr-5">
-                    <h3 class="mb-2">Compara todas las alternativas en un solo lugar.</h3>
-                    <p class="mt-2 mb-5 pl-5 pr-5">MercadoBodegas te permite comparar las mejores alternativas de
+            <div class="container">
+                <div class="row">
+                    <div class="text-center w-100">
+                        <h3 class="mb-2">Compara todas las alternativas en un solo lugar.</h3>
+                    </div>
+                    <p class="mt-2 mb-5 col-md-8 offset-md-2">MercadoBodegas te permite comparar las mejores
+                        alternativas de
                         bodegaje a nivel nacional y elegir la mejor solución para tus necesidades,
                         sin importar la cantidad de cajas que quieras guardar. </p>
                 </div>
                 <div class="row mt-4">
                     <div class="col-sm-4">
-                        <i class="fas fa-search fa-5x"></i>
+                        <i class="fas fa-search fa-5x mb-5"></i>
                     </div>
                     <div class="col-sm-4">
-                        <i class="fas fa-balance-scale-left fa-5x"></i>
+                        <i class="fas fa-balance-scale-left fa-5x mb-5"></i>
                     </div>
                     <div class="col-sm-4">
-                        <i class="fas fa-desktop fa-5x"></i>
+                        <i class="fas fa-desktop fa-5x mb-5"></i>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="pb-5"></div>
     </section>
     <footer class="bg-black white">
         <div class="container-fluid">
             <div class="row text-left pt-3">
-                <div class="col-md">
+                <div class="col-sm d-flex flex-column">
                     <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="191" height="50"
                         style="fill:white" version="1.1"
                         style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
@@ -293,8 +297,9 @@
                     <div>
                         <i class="fas fa-phone-alt"></i>
                         <a href="#">
-                            <b>Show phone number</b>
-                            <div class="line"></div>
+                            <span class="link-border border-white">
+                                <b>Show phone number</b>
+                            </span>
                         </a>
                     </div>
                     <div class="mt-2">
@@ -304,140 +309,192 @@
                         <i class="fab fa-pinterest-p fa-2x ml-2"></i>
                     </div>
                 </div>
-                <div class="col-md">
+                <div class="col-sm d-flex flex-column">
                     <h6 class="mt-2">Sobre mi mercado bodegas</h6>
                     <a href="#">
-                        <b>About</b>
-                        <div class="line"></div>
+                        <span class="link-border border-white">
+                            <b>About</b>
+                        </span>
                     </a>
                     <a href="#">
-                        <b>Jobs</b>
-                        <div class="line"></div>
+                        <span class="link-border border-white">
+                            <b>Jobs</b>
+                        </span>
                     </a>
                     <a href="#">
-                        <b>Blog</b>
-                        <div class="line"></div>
+                        <span class="link-border border-white">
+                            <b>Blog</b>
+                        </span>
                     </a>
                     <a href="#">
-                        <b>The storage Beat</b>
-                        <div class="line"></div>
+                        <span class="link-border border-white">
+                            <b>The storage Beat</b>
+                        </span>
                     </a>
                     <a href="#">
-                        <b>Storage near me</b>
-                        <div class="line"></div>
+                        <span class="link-border border-white">
+                            <b>Storage near me</b>
+                        </span>
                     </a>
                     <a href="#">
-                        <b>Moving guides</b>
-                        <div class="line"></div>
+                        <span class="link-border border-white">
+                            <b>Moving guides</b>
+                        </span>
                     </a>
                     <a href="#">
-                        <b>Terms of use</b>
-                        <div class="line"></div>
+                        <span class="link-border border-white">
+                            <b>Terms of use</b>
+                        </span>
                     </a>
                 </div>
-                <div class="col-md">
+                <div class="col-sm flex-column d-none d-md-flex">
                     <h6 class="mt-2">For facility owners</h6>
                     <a href="#">
-                        <b>Market your facility</b>
-                        <div class="line"></div>
+                        <span class="link-border border-white">
+                            <b>Market your facility</b>
+                        </span>
                     </a>
                     <a href="#">
-                        <b>Owner login</b>
-                        <div class="line"></div>
+                        <span class="link-border border-white">
+                            <b>Owner login</b>
+                        </span>
                     </a>
                 </div>
-                <div class="col-md">
+                <div class="col-sm flex-column d-none d-md-flex">
                     <h6 class="mt-2">Products by type</h6>
                     <a href="#">
-                        <b>Full-service storage</b>
-                        <div class="line"></div>
+                        <span class="link-border border-white">
+                            <b>Full-service storage</b>
+                        </span>
                     </a>
                     <a href="#">
-                        <b>College storage</b>
-                        <div class="line"></div>
+                        <span class="link-border border-white">
+                            <b>College storage</b>
+                        </span>
                     </a>
                     <a href="#">
-                        <b>Car storage</b>
-                        <div class="line"></div>
+                        <span class="link-border border-white">
+                            <b>Car storage</b>
+                        </span>
                     </a>
                     <a href="#">
-                        <b>Boat storage</b>
-                        <div class="line"></div>
+                        <span class="link-border border-white">
+                            <b>Boat storage</b>
+                        </span>
                     </a>
                     <a href="#">
-                        <b>RV storage</b>
-                        <div class="line"></div>
+                        <span class="link-border border-white">
+                            <b>RV storage</b>
+                        </span>
                     </a>
                     <a href="#">
-                        <b>Portable storage</b>
-                        <div class="line"></div>
+                        <span class="link-border border-white">
+                            <b>Portable storage</b>
+                        </span>
                     </a>
                 </div>
-                <div class="col-md">
+                <div class="col-sm">
                     <h6 class="mt-2">Storage by state</h6>
-                    <a href="#">
-                        <b>AL</b>
-                    </a>
-                    <a href="#">
-                        <b>AK</b>
-                    </a>
-                    <a href="#">
-                        <b>AZ</b>
-                    </a>
-                    <a href="#">
-                        <b>AR</b>
-                    </a>
-                    <a href="#">
-                        <b>CA</b>
-                    </a>
-                    <a href="#">
-                        <b>CO</b>
-                    </a>
-                    <a href="#">
-                        <b>CT</b>
-                    </a>
-                    <a href="#">
-                        <b>AL</b>
-                    </a>
-                    <a href="#">
-                        <b>AK</b>
-                    </a>
-                    <a href="#">
-                        <b>AZ</b>
-                    </a>
-                    <a href="#">
-                        <b>AR</b>
-                    </a>
-                    <a href="#">
-                        <b>CA</b>
-                    </a>
-                    <a href="#">
-                        <b>CO</b>
-                    </a>
-                    <a href="#">
-                        <b>CT</b>
-                    </a>
-                    <a href="#">
-                        <b>AL</b>
-                    </a>
-                    <a href="#">
-                        <b>AK</b>
-                    </a>
-                    <a href="#">
-                        <b>AZ</b>
-                    </a>
-                    <a href="#">
-                        <b>AR</b>
-                    </a>
-                    <a href="#">
-                        <b>CA</b>
-                    </a>
-                    <a href="#">
-                        <b>CO</b>
-                    </a>
-                    <a href="#">
-                        <b>CT</b>
-                    </a>
+                    <ul class="lista-estados">
+                        <li class="estado">
+                            <a href="#">
+                                <span class="link-border border-white">
+                                    <b>AL</b>
+                                </span>
+                            </a>
+                        </li>
+                        <li class="estado">
+                            <a href="#">
+                                <span class="link-border border-white">
+                                    <b>AL</b>
+                                </span>
+                            </a>
+                        </li>
+                        <li class="estado">
+                            <a href="#">
+                                <span class="link-border border-white">
+                                    <b>AL</b>
+                                </span>
+                            </a>
+                        </li>
+                        <li class="estado">
+                            <a href="#">
+                                <span class="link-border border-white">
+                                    <b>AL</b>
+                                </span>
+                            </a>
+                        </li>
+                        <li class="estado">
+                            <a href="#">
+                                <span class="link-border border-white">
+                                    <b>AL</b>
+                                </span>
+                            </a>
+                        </li>
+                        <li class="estado">
+                            <a href="#">
+                                <span class="link-border border-white">
+                                    <b>AL</b>
+                                </span>
+                            </a>
+                        </li>
+                        <li class="estado">
+                            <a href="#">
+                                <span class="link-border border-white">
+                                    <b>AL</b>
+                                </span>
+                            </a>
+                        </li>
+                        <li class="estado">
+                            <a href="#">
+                                <span class="link-border border-white">
+                                    <b>AL</b>
+                                </span>
+                            </a>
+                        </li>
+                        <li class="estado">
+                            <a href="#">
+                                <span class="link-border border-white">
+                                    <b>AL</b>
+                                </span>
+                            </a>
+                        </li>
+                        <li class="estado">
+                            <a href="#">
+                                <span class="link-border border-white">
+                                    <b>AL</b>
+                                </span>
+                            </a>
+                        </li>
+                        <li class="estado">
+                            <a href="#">
+                                <span class="link-border border-white">
+                                    <b>AL</b>
+                                </span>
+                            </a>
+                        </li>
+                        <li class="estado">
+                            <a href="#">
+                                <span class="link-border border-white">
+                                    <b>AL</b>
+                                </span>
+                            </a>
+                        </li>
+                        <li class="estado">
+                            <a href="#">
+                                <span class="link-border border-white">
+                                    <b>AL</b>
+                                </span>
+                            </a>
+                        </li>
+                        <li class="estado">
+                            <a href="#">
+                                <span class="link-border border-white">
+                                    <b>AL</b>
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
